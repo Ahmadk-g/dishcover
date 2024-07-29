@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
+MEAL_TYPE = ((0, "Breakfast"),(1, "Lunch"), (2, "Dinner"), (3, "Dessert"), (4, "Salad"), (5, "Soup"), (6, "Snack"))
 
 # Create your models here.
 class Recipe(models.Model):
@@ -16,6 +17,7 @@ class Recipe(models.Model):
     )
     description = models.CharField(max_length=400, blank=True)
     calories = models.IntegerField()
+    meal_type = models.IntegerField(choices=MEAL_TYPE, default=0)
     ingredients = models.TextField()
     instructions = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
