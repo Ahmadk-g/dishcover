@@ -16,7 +16,8 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_poster"
     )
     description = models.CharField(max_length=400, blank=True)
-    calories = models.IntegerField()
+    serves = models.IntegerField(default=0)
+    calories_Per_Serving = models.IntegerField()
     meal_type = models.IntegerField(choices=MEAL_TYPE, default=0)
     ingredients = models.TextField()
     instructions = models.TextField()
