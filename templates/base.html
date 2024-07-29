@@ -1,5 +1,7 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'recipe' as recipes_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +21,14 @@
 </head>
 <body>
     {% include 'includes/header.html' %}
+
+    <main>
+        {% block content %}
+        <!-- Content goes here-->
+        {% endblock content %}
+
+    </main>
+
     {% include 'includes/footer.html' %}
 </body>
 </html>
