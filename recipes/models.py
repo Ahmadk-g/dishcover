@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 
 
 MEAL_TYPE = ((0, "Breakfast"),(1, "Lunch"), (2, "Dinner"), (3, "Dessert"), (4, "Salad"), (5, "Soup"), (6, "Snack"))
@@ -11,7 +12,17 @@ class Ingredient(models.Model):
     
     def __str__(self):
         return str(self.name)
-
+    
+    def clean(self):
+        # Capitalize first letter and lowercase the rest
+        formatted_name = self.name.title()
+        if Ingredient.objects.filter(name__iexact=formatted_name).exists():
+            raise ValidationError(f"The ingredient '{formatted_name}' already exists.")
+        self.name = formatted_name
+        
+    def save(self, *args, **kwargs):
+        self.full_clean()  # This will call the clean method
+        super().save(*args, **kwargs)
 
 
 class Recipe(models.Model):
