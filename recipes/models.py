@@ -2,27 +2,33 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-STATUS = ((0, "Draft"), (1, "Published"))
 MEAL_TYPE = ((0, "Breakfast"),(1, "Lunch"), (2, "Dinner"), (3, "Dessert"), (4, "Salad"), (5, "Soup"), (6, "Snack"))
 
 # Create your models here.
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    
+    def __str__(self):
+        return str(self.name)
+
+
+
 class Recipe(models.Model):
     """
     Stores a single recipe post entry related to :model:'auth.User'.
     """
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, null=False, blank=False, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_poster"
     )
-    description = models.CharField(max_length=400, blank=True)
-    serves = models.IntegerField(default=0)
-    calories_Per_Serving = models.IntegerField()
+    description = models.CharField(max_length=400, null=False, blank=False)
+    ingredients = models.ManyToManyField(Ingredient, related_name='recipes')
+    instructions = models.TextField(null=False, blank=False)
     meal_type = models.IntegerField(choices=MEAL_TYPE, default=0)
-    ingredients = models.TextField()
-    instructions = models.TextField()
+    calories = models.IntegerField()
     posted_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:
         ordering = ["-posted_on"]
@@ -30,6 +36,7 @@ class Recipe(models.Model):
     def __str__(self):
         return str(self.title)
     
+
     
 class Comment(models.Model):
     """
