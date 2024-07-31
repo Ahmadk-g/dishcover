@@ -9,7 +9,7 @@ body {
 
 main {
     flex: 1 0 auto;
-    background-color: white;
+    background-color: rgb(158, 158, 158);
 }
 
 /* Header */
@@ -23,7 +23,6 @@ a.nav-link {
 }
 
 
-
 /* Footer */
 footer {
     flex-shrink: 0;
@@ -35,9 +34,6 @@ footer {
     border-top: 1px solid #000;
 }
 
-p {
-    margin-bottom: 0;
-}
 
 .social-icon {
     height: 2rem;
@@ -48,4 +44,28 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+/* signing in,out,up */
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #188181;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
 }
