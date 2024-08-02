@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from cloudinary.models import CloudinaryField
 
 
 MEAL_TYPE = ((0, "Breakfast"),(1, "Lunch"), (2, "Dinner"), (3, "Dessert"), (4, "Salad"), (5, "Soup"), (6, "Snack"))
@@ -37,6 +38,8 @@ class Recipe(models.Model):
     description = models.CharField(max_length=400, null=False, blank=False)
     ingredients = models.ManyToManyField(Ingredient, related_name='recipes')
     instructions = models.TextField(null=False, blank=False)
+    image = CloudinaryField('image', null=False, blank=False)
+    image_alt = models.CharField(max_length=100, null=False, blank=False)
     meal_type = models.IntegerField(choices=MEAL_TYPE, default=0)
     calories = models.IntegerField()
     posted_on = models.DateTimeField(auto_now_add=True)
