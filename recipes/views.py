@@ -21,6 +21,6 @@ class AddRecipe(LoginRequiredMixin, generic.CreateView):
 
 
 
-class RecipeList(generic.ListViewView):
+class RecipeList(generic.ListView):
     queryset = Recipe.objects.all()
     template= "recipe_list.html"

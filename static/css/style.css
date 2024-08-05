@@ -69,3 +69,12 @@ footer {
     background-color: #fff;
     color: #23BBBB;
 }
+
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    border-radius: 5px;
+    box-shadow: 1px -1px 7px 0 #000000;
+    background-color: #188181;
+}
