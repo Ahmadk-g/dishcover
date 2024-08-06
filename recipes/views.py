@@ -21,6 +21,8 @@ class AddRecipe(LoginRequiredMixin, generic.CreateView):
 
 
 
-class RecipeList(generic.ListView):
-    queryset = Recipe.objects.all()
-    template= "recipe_list.html"
+class Recipes(generic.ListView):
+    """ View all recipes """
+    template_name = 'recipes/recipes.html'
+    model = Recipe
+    context_object_name = 'recipes'

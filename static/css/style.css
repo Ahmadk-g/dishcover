@@ -71,10 +71,22 @@ footer {
 }
 
 
+/* Add recipe form */
 .form {
     width: 100%;
     margin: 3% auto;
     border-radius: 5px;
     box-shadow: 1px -1px 7px 0 #000000;
     background-color: #188181;
+}
+
+/* Recipes.html */
+
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.recipes:hover {
+    cursor: pointer;
 }
