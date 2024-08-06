@@ -7,12 +7,11 @@ class RecipeForm(forms.ModelForm):
     """ Form to create recipe """
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_alt', 'categories', 'calories']
+        fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_alt', 'category', 'calories']
         
         widgets = {
-            'ingredients': forms.CheckboxSelectMultiple,
+            'ingredients': SummernoteWidget(),
             'instructions': SummernoteWidget(),
-            'categories': forms.CheckboxSelectMultiple
         }
         
         labels = {
@@ -22,7 +21,7 @@ class RecipeForm(forms.ModelForm):
             'instructions': 'Recipe Instructions',
             'image': 'Recipe Image',
             'image_alt': 'Describe Image',
-            'categories': 'Meal Categories',
+            'category': 'Meal Category',
         }
             
         
