@@ -63,6 +63,29 @@ LOGOUT_REDIRECT_URL = '/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+
+SUMMERNOTE_CONFIG = {
+    # You can put custom Summernote settings
+    'summernote': {
+        
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript', 'fontname', 'fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ],
+        # 'fontNames': ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Merriweather'],
+        'fontSizes': [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36],
+    },
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
