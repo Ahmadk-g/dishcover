@@ -82,7 +82,7 @@ SUMMERNOTE_CONFIG = {
             ['height', ['height']]
         ],
         # 'fontNames': ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Merriweather'],
-        'fontSizes': [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36],
+        'fontSizes': ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '26', '28', '36'],
     },
 }
 

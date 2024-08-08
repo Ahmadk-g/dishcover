@@ -82,6 +82,11 @@ footer {
 
 /* Recipes.html */
 
+.recipes {
+    text-decoration: none;
+    color: #000;
+}
+
 .card {
     height: 90%;
     margin-top: 1rem;

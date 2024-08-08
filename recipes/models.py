@@ -9,7 +9,7 @@ from cloudinary.models import CloudinaryField
 
 # Choice Fields
 CATEGORIES = (
-    ('appetisers', 'Appetizers'),
+    ('appetisers/snacks', 'Appetizers/Snacks'),
     ('beverages', 'Beverages'),
     ('soups', 'Soups'),
     ('salads', 'Salads'),
