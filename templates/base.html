@@ -31,10 +31,11 @@
         {% else %}
         <p class="text-end m-3">You are not logged in</p>
         {% endif %}
-
-        {% block content %}
-        <!-- Content goes here-->
-        {% endblock content %}
+        <div class="body-content">
+            {% block content %}
+            <!-- Content goes here-->
+            {% endblock content %}
+        </div>
 
     </main>
 

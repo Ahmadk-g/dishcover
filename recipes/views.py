@@ -27,6 +27,12 @@ class Recipes(generic.ListView):
     model = Recipe
     context_object_name = 'recipes'
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['url_name'] = 'recipes'  # Pass the url_name to the context
+        return context
+    
+    
     
 def RecipeDetails(request, slug):
     """ View Recipe details """
