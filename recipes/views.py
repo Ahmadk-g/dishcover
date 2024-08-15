@@ -19,10 +19,21 @@ class AddRecipe(LoginRequiredMixin, generic.CreateView):
         form.instance.author = self.request.user
         return super(AddRecipe, self).form_valid(form)
     
+    
+class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView): 
+    model = Recipe
+    template_name = 'recipes/edit_recipe.html'
+    form_class = RecipeForm
+    success_url = '/recipes/'
+
+    def test_func(self):# For checking if the user is authorized to edit the post
+        return self.request.user == self.get_object().author
+    
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView): # order of Arg matters 
     model = Recipe
     success_url = '/recipes/'
+    #template name not required, expects the template in a certain format, ("lowercase model name"_confirm_delete)
     
     def test_func(self):# For checking if the user is authorized to delete the post
         return self.request.user == self.get_object().author
