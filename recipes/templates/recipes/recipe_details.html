@@ -2,26 +2,26 @@
 
 
 {% block content %}
-    <div class="container d-flex flex-row flex-wrap justify-content-center">
-        <div class="recipe-main-details">
+    <div class="container d-flex flex-wrap">
+        <div class="recipe-main-details mt-3 p-1">
             <div class="recipe-image">
-                <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}">
+                <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="recipe-pic">
             </div>
             <div class="recipe-info">
-                <h2 class="recipe-title">{{recipe.title}}</h2>
-                <p>{{recipe.description}}</p>
-                <p>Posted by {{recipe.author}} on {{recipe.posted_on}}</p>
+                <h2 class="recipe-title text-center">{{recipe.title}}</h2>
+                <p >{{recipe.description}}</p>
+                <p class="text-end">Posted by {{recipe.author}} on {{recipe.posted_on|date:'d M Y'}}</p>
                 <br>
-                <p>Calories: {{recipe.calories}}</p>
-                <p>Meal Category: {{recipe.category}}</p>
+                <p class="recipe-fact"><strong>Calories: </strong>{{recipe.calories}}</p>
+                <p class="recipe-fact"><strong>Meal Category: </strong>{{recipe.category}}</p>
             </div>
         </div>
         <div class="recipe-details">
-            <div class="ingredients">
+            <div class="ingredients p-3">
                 <h3>Ingredients</h3>
                 <p>{{ recipe.ingredients | safe }}</p>
             </div>
-            <div class="instructions">
+            <div class="instructions p-3">
                 <h3>Instructions</h3>
                 <p>{{ recipe.instructions | safe }}</p>
             </div>
