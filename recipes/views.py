@@ -1,8 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
-
+from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin # The Add recipe view can only be accessed if the user logged in
-
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -60,4 +59,14 @@ def RecipeDetails(request, slug):
     
     
     return render(request, 'recipes/recipe_details.html', {'recipe': recipe})
+
+
+def like_recipe(request, slug):
+    queryset = Recipe.objects.all()
+    recipe = get_object_or_404(queryset, slug=slug)
+    if recipe.likes.filter(id=request.user.id).exists():
+        recipe.likes.remove(request.user)
+    else:
+        recipe.likes.add(request.user)
+    return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
     

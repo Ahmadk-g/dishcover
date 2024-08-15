@@ -37,9 +37,13 @@ class Recipe(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORIES, default='main dishes')   
     calories = models.IntegerField()
     posted_on = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
     
     class Meta:
         ordering = ["-posted_on"]
+        
+    def total_likes(self):
+        return self.likes.count()    
         
     # To ensure that the slug is always created when a new recipe is saved, whether through admin interface or form on site.
     def save(self, *args, **kwargs):

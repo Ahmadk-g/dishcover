@@ -21,6 +21,16 @@
                     <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-primary w-25">Delete</a>
                 </div>
                 {% endif %}
+
+                <form action="{% url 'like_recipe' recipe.slug %}" method="POST" class="d-inline">
+                    {% csrf_token %}
+                    {% if user in recipe.likes.all %}
+                        <button type="submit" class="btn btn-danger">Unlike</button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">Like</button>
+                    {% endif %}
+                </form>
+                <p>{{ recipe.total_likes }} likes</p>
             </div>
         </div>
         <div class="recipe-details">
