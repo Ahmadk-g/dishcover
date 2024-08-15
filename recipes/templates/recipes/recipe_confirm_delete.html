@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Delete recipe {{ object.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-2">Confirm Recipe Deletion</h1>
+    <div class="d-flex justify-content-center pt-3">
+        <form method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{ object.title }}"?</p>
+            <a href="{% url 'recipe_details' recipe.slug %}" class="recipes btn btn-primary w-25">back</a>
+            <input type="submit" value="Confirm" class="btn btn-primary w-25">
+        </form>
+    </div>
+</div>
+{% endblock %}

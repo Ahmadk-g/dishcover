@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
-from django.contrib.auth.mixins import LoginRequiredMixin # The Add recipe view can only be accessed if the user logged in
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin # The Add recipe view can only be accessed if the user logged in
 
 from .models import Recipe
 from .forms import RecipeForm
@@ -18,6 +18,14 @@ class AddRecipe(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(AddRecipe, self).form_valid(form)
+    
+
+class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView): # order of Arg matters 
+    model = Recipe
+    success_url = '/recipes/'
+    
+    def test_func(self):# For checking if the user is authorized to delete the post
+        return self.request.user == self.get_object().author
 
 
 
