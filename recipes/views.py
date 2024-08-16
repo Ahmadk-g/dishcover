@@ -1,7 +1,10 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin # The Add recipe view can only be accessed if the user logged in
+from django.db.models import Q # a rapper for sequel queries that allows us to write complex database operations with less code
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -49,6 +52,20 @@ class Recipes(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['url_name'] = 'recipes'  # Pass the url_name to the context
         return context
+    
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            recipes = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(ingredients__icontains=query) |
+                Q(instructions__icontains=query) |
+                Q(category__icontains=query)
+            )
+        else:
+            recipes = self.model.objects.all()
+        return recipes
     
     
     
