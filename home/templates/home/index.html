@@ -1,1 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="container">
+        <div class="Hero-text row justify-content-center m-4">
+            <section class="text-center col-12 col-md-8">
+                <h2>Dishcover Your Next Favorite Dish: Recipes for Every Taste</h2>
+            </section>
+        </div>
+        <div class="row justify-content-center">
+                <a href="{% url 'recipes' %}" class="home-container col-md-3 m-3" style="width: 20rem;">
+                    <img src="{% static 'images/recipe-hero.jpg' %}" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                        <div class="text">Check out new recipes</div>
+                    </div>
+                </a>
+                <a  href="{% url 'add_recipes' %}" class="home-container col-md-3 m-3" style="width: 20rem;">
+                    <img src="{% static 'images/recipe-hero.jpg' %}" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                        <div class="text">Check out new recipes</div>
+                    </div>
+                </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
