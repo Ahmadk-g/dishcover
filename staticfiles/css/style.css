@@ -17,13 +17,19 @@ body {
 .body-content {
     display: flex;
     flex-direction: column;
+    /* flex-grow: 1;
+    justify-content: center;
+    align-items: center; */
 }
 
 main {
     flex: 1 0 auto;
     /* background-color: rgb(158, 158, 158); */
-    background: rgb(232,49,0);
-    background: linear-gradient(0deg, rgba(232,49,0,1) 0%, rgba(255,105,51,1) 25%, rgba(255,165,112,1) 100%);
+    background-color: rgb(225,105,51);
+    /* background: linear-gradient(0deg, rgba(232,49,0,1) 0%, rgba(255,105,51,1) 25%, rgba(255,165,112,1) 100%); */
+    /* display: flex;
+    flex-direction: column; */
+    
 }
 
 /* Header */
@@ -95,9 +101,18 @@ footer {
 
 
 /* Home page */
-.container {
+
+.main-text{
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding-bottom: 20px;
+
+}
+
+.image-container {
     position: relative;
     width: 50%;
+    border-radius: 20px;
   }
   
   .image {
@@ -107,29 +122,37 @@ footer {
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
+    border-radius: 20px;
   }
   
   .middle {
+    align-content: center;
     transition: .5s ease;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
+    width: 92%;
+    height: 35%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
     text-align: center;
+    background-color: #000000aa;
   }
   
-  .container:hover .image {
-    opacity: 0.3;
-  }
   
-  .container:hover .middle {
+  .image-container:hover .middle {
     opacity: 1;
+    /* background-color: #000000df; */
+    height: 100%;
+    border-radius: 20px;
+
+
   }
   
   .text {
-    background-color: #04AA6D;
+    /* background-color: #000000; */
     color: white;
     font-size: 16px;
     padding: 16px 32px;
@@ -205,6 +228,14 @@ footer {
     width: 100%;
     height: auto;
 }
+
+
+/* About */
+
+.profile-image {
+    width: 100%;
+}
+
 
 
 @media screen and (min-width: 62.5em) {

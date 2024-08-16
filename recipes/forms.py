@@ -23,6 +23,4 @@ class RecipeForm(forms.ModelForm):
             'image_alt': 'Describe Image',
             'category': 'Meal Category',
         }
-            
-        
        
