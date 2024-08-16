@@ -7,20 +7,31 @@
     <div class="container">
         <div class="Hero-text row justify-content-center m-4">
             <section class="text-center col-12 col-md-8">
-                <h2>Dishcover Your Next Favorite Dish: Recipes for Every Taste</h2>
+                <h2 class="main title">Dishcover Your Next Favorite Dish: Recipes for Every Taste</h2>
+                <p class=" main-text pt-4">
+                    Tired of eating the same 5 dishes over and over again?
+                    Do you feel thr urge to share your delicious recipes?
+                    Go ahead and Dishcover it all!
+                </p>
             </section>
         </div>
         <div class="row justify-content-center">
-                <a href="{% url 'recipes' %}" class="home-container col-md-3 m-3" style="width: 20rem;">
-                    <img src="{% static 'images/recipe-hero.jpg' %}" alt="Avatar" class="image" style="width:100%">
+                <a href="{% url 'recipes' %}" class="image-container col-md-3 m-3" style="width: 20rem;">
+                    <img src="{% static 'images/recipe-hero.jpg' %}" alt="image indicating Recipes page" class="image" style="width:100%">
                     <div class="middle">
-                        <div class="text">Check out new recipes</div>
+                        <div class="text">Recipes</div>
                     </div>
                 </a>
-                <a  href="{% url 'add_recipes' %}" class="home-container col-md-3 m-3" style="width: 20rem;">
+                <a  href="{% url 'add_recipes' %}" class="image-container col-md-3 m-3" style="width: 20rem;">
                     <img src="{% static 'images/recipe-hero.jpg' %}" alt="Avatar" class="image" style="width:100%">
                     <div class="middle">
-                        <div class="text">Check out new recipes</div>
+                        <div class="text">Add Recipe</div>
+                    </div>
+                </a>
+                <a  href="{% url 'about' %}" class="image-container col-md-3 m-3" style="width: 20rem;">
+                    <img src="{% static 'images/recipe-hero.jpg' %}" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                        <div class="text">Collaborate with us</div>
                     </div>
                 </a>
         </div>

@@ -102,9 +102,17 @@ footer {
 
 /* Home page */
 
-.home-container {
+.main-text{
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding-bottom: 20px;
+
+}
+
+.image-container {
     position: relative;
     width: 50%;
+    border-radius: 20px;
   }
   
   .image {
@@ -114,29 +122,37 @@ footer {
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
+    border-radius: 20px;
   }
   
   .middle {
+    align-content: center;
     transition: .5s ease;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
+    width: 92%;
+    height: 35%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
     text-align: center;
+    background-color: #000000aa;
   }
   
-  .home-container:hover .image {
-    opacity: 0.3;
-  }
   
-  .home-container:hover .middle {
+  .image-container:hover .middle {
     opacity: 1;
+    /* background-color: #000000df; */
+    height: 100%;
+    border-radius: 20px;
+
+
   }
   
   .text {
-    background-color: #04AA6D;
+    /* background-color: #000000; */
     color: white;
     font-size: 16px;
     padding: 16px 32px;
