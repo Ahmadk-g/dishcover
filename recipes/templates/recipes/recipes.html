@@ -3,13 +3,14 @@
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
+<a class="btn add-recipe-link my-2" role="button" href="{% url 'add_recipes' %}"  aria-label="Click to add new recipe">Add new recipe!</a>
+
  <!-- Filter Form -->
  <form class="filtering" method="get" action="{% url 'recipes' %}">
     {{ category_filter_form.as_p }}
     <button type="submit" class="btn btn-primary">Filter</button>
 </form>
  <!-- Recipe list -->
-<a class="btn add-recipe-link my-2" role="button" href="{% url 'add_recipes' %}"  aria-label="Click to add new recipe">Add new recipe!</a>
 <h1 class="text-center p-2">Latest Recipes</h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for recipe in recipes %}

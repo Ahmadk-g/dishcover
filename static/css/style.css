@@ -206,6 +206,10 @@ footer {
     margin: 20px;
 }
 
+.filtering .form-selecter {
+    background-color: #188181;
+}
+
 /* Recipe details */
 
 

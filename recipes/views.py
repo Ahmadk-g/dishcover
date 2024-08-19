@@ -49,15 +49,17 @@ class Recipes(generic.ListView):
     model = Recipe
     context_object_name = 'recipes'
     
-    def get_context_data(self, **kwargs): # Troubleshoot navlink.active
+    def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
-        context['url_name'] = 'recipes'  # Pass the url_name to the context
-        context['category_filter_form'] = CategoryFilterForm()  # Add the filter form to the context
+        context['url_name'] = 'recipes'  # Pass the url_name to the context # Troubleshoot navlink.active
+        context['category_filter_form'] = CategoryFilterForm(self.request.GET)  # Add the filter form to the context
         return context
     
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
         category = self.request.GET.get('category')
+        print("Selected category:", category)  # Debugging line
+
         if query:
             recipes = self.model.objects.filter(
                 Q(title__icontains=query) |

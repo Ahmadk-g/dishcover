@@ -162,11 +162,11 @@ footer {
 
 /* Add recipe form */
 .form {
-    width: 100%;
+    width: 80%;
     margin: 3% auto;
     border-radius: 5px;
     box-shadow: 1px -1px 7px 0 #000000;
-    background-color: #188181;
+    background-color: #40573d;
 }
 
 /* Recipes.html */
@@ -206,6 +206,9 @@ footer {
     margin: 20px;
 }
 
+.filtering .form-selecter {
+    background-color: #188181;
+}
 
 /* Recipe details */
 

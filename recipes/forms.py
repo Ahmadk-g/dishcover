@@ -27,8 +27,7 @@ class RecipeForm(forms.ModelForm):
        
 class CategoryFilterForm(forms.Form):
     
-    model = Recipe
-    Category = forms.ChoiceField(
+    category = forms.ChoiceField(
         choices=[('', 'All Categories')] + list(CATEGORIES),
         required=False,
         widget=forms.Select(attrs={'class': 'form-select'}),  # Bootstrap class for styling
