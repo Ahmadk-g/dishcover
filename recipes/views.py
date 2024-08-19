@@ -86,4 +86,15 @@ def like_recipe(request, slug):
     else:
         recipe.likes.add(request.user)
     return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
+
     
+
+class FavoritesView(LoginRequiredMixin, generic.ListView):
+    model = Recipe
+    template_name = 'recipes/favorites.html'
+    context_object_name = 'recipes'
+
+    def get_queryset(self):
+        # Assuming you have a 'likes' field in Recipe model
+        # Filter recipes liked by the current user
+        return Recipe.objects.filter(likes=self.request.user).order_by('-posted_on')
