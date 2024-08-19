@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin # The Add recipe view can only be accessed if the user logged in
 from django.db.models import Q # a rapper for sequel queries that allows us to write complex database operations with less code
 from .models import Recipe
-from .forms import RecipeForm
+from .forms import RecipeForm, CategoryFilterForm
 
 # Create your views here.
 
@@ -49,13 +49,15 @@ class Recipes(generic.ListView):
     model = Recipe
     context_object_name = 'recipes'
     
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # Troubleshoot navlink.active
         context = super().get_context_data(**kwargs)
         context['url_name'] = 'recipes'  # Pass the url_name to the context
+        context['category_filter_form'] = CategoryFilterForm()  # Add the filter form to the context
         return context
     
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
+        category = self.request.GET.get('category')
         if query:
             recipes = self.model.objects.filter(
                 Q(title__icontains=query) |
@@ -64,8 +66,15 @@ class Recipes(generic.ListView):
                 Q(instructions__icontains=query) |
                 Q(category__icontains=query)
             )
+            
+        elif category:
+            recipes = self.model.objects.filter(category=category)
+            
+            
         else:
             recipes = self.model.objects.all()
+            
+        
         return recipes
     
     

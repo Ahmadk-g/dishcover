@@ -201,6 +201,11 @@ footer {
     font-size: 2rem;
 }
 
+.filtering {
+    width: 20%;
+    margin: 20px;
+}
+
 
 /* Recipe details */
 

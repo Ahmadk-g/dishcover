@@ -1,6 +1,6 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from .models import Recipe
+from .models import Recipe, CATEGORIES
 
 
 class RecipeForm(forms.ModelForm):
@@ -24,3 +24,14 @@ class RecipeForm(forms.ModelForm):
             'category': 'Meal Category',
         }
        
+       
+class CategoryFilterForm(forms.Form):
+    
+    model = Recipe
+    Category = forms.ChoiceField(
+        choices=[('', 'All Categories')] + list(CATEGORIES),
+        required=False,
+        widget=forms.Select(attrs={'class': 'form-select'}),  # Bootstrap class for styling
+        label='Meal Type'
+    )
+    
