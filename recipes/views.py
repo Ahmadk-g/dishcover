@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, reverse
@@ -77,7 +78,7 @@ def RecipeDetails(request, slug):
     
     return render(request, 'recipes/recipe_details.html', {'recipe': recipe})
 
-
+@login_required
 def like_recipe(request, slug):
     queryset = Recipe.objects.all()
     recipe = get_object_or_404(queryset, slug=slug)
@@ -98,3 +99,13 @@ class FavoritesView(LoginRequiredMixin, generic.ListView):
         # Assuming you have a 'likes' field in Recipe model
         # Filter recipes liked by the current user
         return Recipe.objects.filter(likes=self.request.user).order_by('-posted_on')
+
+
+class MyRecipes(LoginRequiredMixin, generic.ListView):
+    model = Recipe
+    template_name = 'recipes/myrecipes.html'
+    context_object_name = 'recipes'
+
+    def get_queryset(self):
+        # Filter recipes posted by the current user
+        return Recipe.objects.filter(author=self.request.user).order_by('-posted_on')
