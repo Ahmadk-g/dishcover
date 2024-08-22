@@ -16,6 +16,11 @@
     </section>
     <div>
         <div class="row">
+            {% if no_favorites %}
+            <div>
+                You don't have any favorite recipes. Check out the recipes <a href="{% url 'recipes' %}">here</a>.
+            </div>
+            {% else %}
             <!-- Loop through each post in the 'new' context variable -->
             {% for recipe in recipes %}
             <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
@@ -27,6 +32,7 @@
                 </div>
             </a>
             {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>

@@ -2,7 +2,8 @@ from django.contrib.auth.decorators import login_required
 from typing import Any
 from django.contrib import messages
 from django.db.models.query import QuerySet
-from django.shortcuts import render, get_object_or_404, reverse
+from django.urls import reverse, reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin # The Add recipe view can only be accessed if the user logged in
@@ -37,6 +38,9 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     def form_valid(self, form):
         self.object = form.save()
         messages.success(self.request, "Recipe updated.")
+        origin_page = self.request.session.get('origin_page', 'recipes') #redirection to the right page after editing
+        if origin_page == 'my_recipes':
+            return redirect(reverse_lazy('my_recipes'))
         return super().form_valid(form)
 
     
@@ -50,9 +54,12 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
         return self.request.user == self.get_object().author
     
     def form_valid(self, form):
-        form.instance.author = self.request.user
         messages.success(self.request, "Recipe deleted successfully.")
-        return super(AddRecipe, self).form_valid(form)
+         # Determine the redirect URL based on the session variable
+        origin_page = self.request.session.get('origin_page', 'recipes') #redirection to the right page after deleting
+        if origin_page == 'my_recipes':
+            return redirect(reverse_lazy('my_recipes'))  
+        return super().form_valid(form)
 
 
 
@@ -94,6 +101,11 @@ class Recipes(generic.ListView):
         
         return recipes
     
+    def get(self, request, *args, **kwargs): # assist in page redirection after edit or delete
+        # Set the session variable based on the page the user is currently on
+        request.session['origin_page'] = 'recipes'
+        return super().get(request, *args, **kwargs)
+    
     
     
 def RecipeDetails(request, slug):
@@ -129,6 +141,15 @@ class FavoritesView(LoginRequiredMixin, generic.ListView):
         # Assuming you have a 'likes' field in Recipe model
         # Filter recipes liked by the current user
         return Recipe.objects.filter(likes=self.request.user).order_by('-posted_on')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Check if the user has no favorite recipes
+        if not context['recipes'].exists():
+            context['no_favorites'] = True
+        else:
+            context['no_favorites'] = False
+        return context
 
 
 class MyRecipes(LoginRequiredMixin, generic.ListView):
@@ -139,3 +160,17 @@ class MyRecipes(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         # Filter recipes posted by the current user
         return Recipe.objects.filter(author=self.request.user).order_by('-posted_on')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Check if the user has no favorite recipes
+        if not context['recipes'].exists():
+            context['no_recipes'] = True
+        else:
+            context['no_recipes'] = False
+        return context
+    
+    def get(self, request, *args, **kwargs): # assist in page redirection after edit or delete
+        # Set the session variable based on the page the user is currently on
+        request.session['origin_page'] = 'my_recipes'
+        return super().get(request, *args, **kwargs)
