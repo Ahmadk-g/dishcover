@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from typing import Any
+from django.contrib import messages
 from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
@@ -20,6 +21,7 @@ class AddRecipe(LoginRequiredMixin, generic.CreateView):
     
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, "Recipe added successfully.")
         return super(AddRecipe, self).form_valid(form)
     
     
@@ -32,6 +34,12 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     def test_func(self):# For checking if the user is authorized to edit the post
         return self.request.user == self.get_object().author
     
+    def form_valid(self, form):
+        self.object = form.save()
+        messages.success(self.request, "Recipe updated.")
+        return super().form_valid(form)
+
+    
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView): # order of Arg matters 
     model = Recipe
@@ -40,6 +48,11 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     
     def test_func(self):# For checking if the user is authorized to delete the post
         return self.request.user == self.get_object().author
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        messages.success(self.request, "Recipe deleted successfully.")
+        return super(AddRecipe, self).form_valid(form)
 
 
 
@@ -48,6 +61,8 @@ class Recipes(generic.ListView):
     template_name = 'recipes/recipes.html'
     model = Recipe
     context_object_name = 'recipes'
+    paginate_by = 8
+
     
     def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
@@ -95,8 +110,12 @@ def like_recipe(request, slug):
     recipe = get_object_or_404(queryset, slug=slug)
     if recipe.likes.filter(id=request.user.id).exists():
         recipe.likes.remove(request.user)
+        messages.success(request, "Removed from favourites.")
+
     else:
         recipe.likes.add(request.user)
+        messages.add_message(request, messages.SUCCESS, 'Added to favourites!')
+        # messages.success(request, "Added to favourites.")
     return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
 
     

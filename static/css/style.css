@@ -24,6 +24,22 @@ body {
     align-items: center; */
 }
 
+/* Success message */
+.alert{
+    opacity: 0.7;
+    transition: opacity 1s ease-out;
+    background-color: #188181;
+}
+
+.alert.fade-out {
+    opacity: 0;
+}
+.alert-container {
+    width: 40%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
 main {
     flex: 1 0 auto;
     /* background-color: rgb(158, 158, 158); */
