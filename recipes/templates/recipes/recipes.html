@@ -13,16 +13,35 @@
  <!-- Recipe list -->
 <h1 class="text-center p-2">Latest Recipes</h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
-    {% for recipe in recipes %}
-    <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
-            <div class="card-body">
-              <h4 class="card-title">{{recipe.title}}</h4>
-            </div>
+    {% if recipes %}
+      {% for recipe in recipes %}
+      <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+          <div class="card m-3" style="width: 18rem;">
+              <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
+              <div class="card-body">
+                <h4 class="card-title">{{recipe.title}}</h4>
+              </div>
           </div>
-    </a>
-    {% endfor %}
+      </a>
+      {% endfor %}
+    {% else %}
+    <div class="no-results-message text-center">
+      <h3>No recipes found matching your criteria.</h3>
+      <p>Try adjusting your search or filter to find what you're looking for.</p>
+    </div>
+    {% endif %}
 </div>
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
     
 {% endblock %}
