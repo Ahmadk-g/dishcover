@@ -6,7 +6,7 @@
         <div class="container-fluid">
         <!-- Logo -->
           <a class="navbar-brand" href="#">
-            <img id="logo-image" src="{% static '/images/logo2.png' %}" alt="3d cubes logo" width="100">
+            <img id="logo-image" src="{% static '/images/logo.png' %}" alt="3d cubes logo" width="100">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,14 +26,15 @@
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
               </li>
+              {% if user.is_superuser %} <!-- Admin-specific content here -->
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
+              </li>
+              {% endif %}
             </ul>
             <!-- Search bar form -->
           </div>
           <div class="d-flex align-items-center">
-            <!-- <form class="d-flex" method="GET" role="search" action="{% url 'recipes' %}">
-              <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
             {% if user.is_authenticated %}
             <div class="d-flex justify-content-center dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
