@@ -25,6 +25,11 @@ class AddRecipe(LoginRequiredMixin, generic.CreateView):
         messages.success(self.request, "Recipe added successfully.")
         return super(AddRecipe, self).form_valid(form)
     
+    def form_invalid(self, form):
+        # This method is called when form validation fails
+        messages.error(self.request, "There was an error creating your recipe.")
+        return super().form_invalid(form)
+    
     
 class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView): 
     model = Recipe
@@ -38,10 +43,13 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     def form_valid(self, form):
         self.object = form.save()
         messages.success(self.request, "Recipe updated.")
-        origin_page = self.request.session.get('origin_page', 'recipes') #redirection to the right page after editing
-        if origin_page == 'my_recipes':
-            return redirect(reverse_lazy('my_recipes'))
-        return super().form_valid(form)
+       
+        return redirect(reverse('recipe_details', kwargs={'slug': self.object.slug}))
+    
+    def form_invalid(self, form):
+        # This method is called when form validation fails
+        messages.error(self.request, "There was an error updating your recipe.")
+        return super().form_invalid(form)
 
     
 
@@ -55,11 +63,22 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     
     def form_valid(self, form):
         messages.success(self.request, "Recipe deleted successfully.")
+        
+        response = super().form_valid(form) # to update the databsase
+        
          # Determine the redirect URL based on the session variable
         origin_page = self.request.session.get('origin_page', 'recipes') #redirection to the right page after deleting
         if origin_page == 'my_recipes':
-            return redirect(reverse_lazy('my_recipes'))  
-        return super().form_valid(form)
+            return redirect(reverse_lazy('my_recipes'))
+        elif origin_page =='favorites': 
+            return redirect(reverse_lazy('favorites'))
+        
+        return response
+    
+    def form_invalid(self, form):
+        # This method is called when form validation fails
+        messages.error(self.request, "There was an error deleting your recipe.")
+        return super().form_invalid(form)
 
 
 
@@ -116,17 +135,17 @@ def RecipeDetails(request, slug):
     
     return render(request, 'recipes/recipe_details.html', {'recipe': recipe})
 
-@login_required
+@login_required 
 def like_recipe(request, slug):
     queryset = Recipe.objects.all()
     recipe = get_object_or_404(queryset, slug=slug)
     if recipe.likes.filter(id=request.user.id).exists():
         recipe.likes.remove(request.user)
-        messages.success(request, "Removed from favourites.")
+        messages.success(request, "Recipe removed from favourites.")
 
     else:
         recipe.likes.add(request.user)
-        messages.add_message(request, messages.SUCCESS, 'Added to favourites!')
+        messages.add_message(request, messages.SUCCESS, 'Recipe added to favourites!')
         # messages.success(request, "Added to favourites.")
     return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
 
@@ -150,6 +169,11 @@ class FavoritesView(LoginRequiredMixin, generic.ListView):
         else:
             context['no_favorites'] = False
         return context
+    
+    def get(self, request, *args, **kwargs): # assist in page redirection after edit or delete
+        # Set the session variable based on the page the user is currently on
+        request.session['origin_page'] = 'favorites'
+        return super().get(request, *args, **kwargs)
 
 
 class MyRecipes(LoginRequiredMixin, generic.ListView):
