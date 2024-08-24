@@ -22,6 +22,10 @@ body {
     align-items: center; */
 }
 
+button input a {
+    cursor: pointer;
+}
+
 /* Success message */
 .alert{
     opacity: 0.7;
@@ -286,11 +290,32 @@ position: fixed; /* Sit on top of the page content */
 /* Add recipe form */
 .form {
     width: 80%;
-    margin: 3% auto;
-    border-radius: 5px;
-    box-shadow: 1px -1px 7px 0 #000000;
-    background-color: #40573d;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #9ea07e;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
+
+.form-button-container {
+    display: flex;
+    justify-content: end;
+}
+
+.form-button-container button {
+    width: 20%;
+    background-color: rgb(255 198 114);
+    color: #494a37;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-button-container button:hover {
+    background-color: rgb(255, 185, 79);
+    color: #494a37;
+}
+
 
 /* Recipes.html */
 
