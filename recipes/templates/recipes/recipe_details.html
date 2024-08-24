@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="container d-flex flex-wrap">
-        <div class="recipe-main-details mt-3 p-1">
+        <div class="recipe-main-details mt-3">
             <div class="recipe-image">
                 <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="recipe-pic">
             </div>
@@ -17,17 +17,17 @@
 
                 {% if request.user == recipe.author %}
                 <div class="text-center">
-                    <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-primary w-25">Edit</a>
-                    <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-primary w-25">Delete</a>
+                    <a href="{% url 'edit_recipe' recipe.slug %}" class="button edit-recipe-button w-25">Edit</a>
+                    <a href="{% url 'delete_recipe' recipe.slug %}" class="button delete-recipe-button w-25">Delete</a>
                 </div>
                 {% endif %}
 
                 <form action="{% url 'like_recipe' recipe.slug %}" method="POST" class="d-inline">
                     {% csrf_token %}
                     {% if user in recipe.likes.all %}
-                        <button type="submit" class="btn btn-danger">Unlike</button>
+                        <button type="submit" class="button unlike-button">Unlike</button>
                     {% else %}
-                        <button type="submit" class="btn btn-primary">Like</button>
+                        <button type="submit" class="button like-button">Like</button>
                     {% endif %}
                 </form>
                 <p>{{ recipe.total_likes }} likes</p>

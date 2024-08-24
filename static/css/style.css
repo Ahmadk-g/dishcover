@@ -28,9 +28,8 @@ button input a {
 
 /* Success message */
 .alert{
-    opacity: 0.7;
     transition: opacity 1s ease-out;
-    background-color: #188181;
+    background-color: #b8d8b0;
 }
 
 .alert.fade-out {
@@ -40,6 +39,8 @@ button input a {
     width: 40%;
     padding: 10px;
     margin: 0 auto;
+    position: fixed;
+    left: 30%;
 }
 
 main {
@@ -309,6 +310,7 @@ position: fixed; /* Sit on top of the page content */
     color: #494a37;
     border-radius: 10px;
     border: none;
+    margin-top: 20px;
 }
 
 .form-button-container button:hover {
@@ -429,15 +431,60 @@ position: fixed; /* Sit on top of the page content */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 10px;
+    background-color: #9ea07e;
+    padding: 20px;
 }
 
 .recipe-details {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 10px solid #9ea07e;
 }
 
 .ingredients, .instructions, .recipe-info {
     width: 100%;
+}
+
+.ingredients {
+    border-right: 2px solid #9ea07e;
+}
+
+
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+}
+
+.edit-recipe-button, .delete-recipe-button {
+    height: 47px;    
+    padding: 10px;
+    background-color: #717357;
+    color:  rgb(255 198 114);
+}
+
+.edit-recipe-button:hover, .delete-recipe-button:hover {
+    background-color: #494a37;
+    color:  rgb(255, 185, 79);
+}
+
+.like-button, .unlike-button {
+    height: 38px;
+    padding: 0 15px;
+}
+
+.like-button {
+    color: #717357;
+    background-color:  rgb(255 198 114);
+}
+
+.like-button:hover {
+    color: #494a37;
+    background-color:  rgb(255, 185, 79);
 }
 
 /* .recipe-title {
@@ -457,17 +504,22 @@ position: fixed; /* Sit on top of the page content */
 }
 
 
+.collaborate-form {
+    padding: 30px;
+    background-color: #9ea07e;
+    border-radius: 10px;
+}
 
 @media screen and (min-width: 62.5em) {
 
     .recipe-main-details{
         flex-direction: row;
-        border: 1px solid orangered;
-        border-radius: 5px;
     }
 
     .recipe-image {
         width: 40%;
+        display: flex;
+        object-fit: cover;
         /* margin: 0 auto; */
     }
 
@@ -483,7 +535,6 @@ position: fixed; /* Sit on top of the page content */
 
     .ingredients {
         width: 40%;
-        border-right: 2px solid orangered
     }
     .instructions {
         width: 55%;
