@@ -14,8 +14,6 @@ CATEGORIES = (
     ('beverages', 'Beverages'),
     ('soups', 'Soups'),
     ('salads', 'Salads'),
-    ('vegan', 'Vegan'),
-    ('vegeterian', 'Vegeterian'),
     ('main dishes', 'Main Dishes'),
     ('desserts', 'Desserts')
 )
@@ -53,25 +51,3 @@ class Recipe(models.Model):
 
     def __str__(self):
         return str(self.title)
-    
-
-    
-class Comment(models.Model):
-    """
-    Stores a single comment entry related to :model:'auth.User' and :model:'recipes.Recipe'.
-    """
-    post = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, related_name="comments"
-    )
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name= "commenter"
-    )
-    body = models.TextField()
-    approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-    
-    class Meta:
-        ordering = ["created_on"]
-        
-    def __str__(self) :
-        return f"Comment {self.body} by {self.author}"

@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '8080-ahmadkg-dishcover-3799hqjd0z3.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -138,11 +138,15 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+# Add or update the CONN_MAX_AGE setting for resolving too much database connections
+DATABASES['default']['CONN_MAX_AGE'] = 300 
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
-    "http://127.0.0.1:8000/"
+    "http://127.0.0.1:8000/",
+    "https://8080-ahmadkg-dishcover-3799hqjd0z3.ws.codeinstitute-ide.net"
 ]
 
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recipe, Comment
+from .models import Recipe
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -12,5 +12,3 @@ class RecipeAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('ingredients', 'instructions')
     # To resolves the error for including a manytomanyfield(Ingredient) in list_display
-    
-admin.site.register(Comment)
