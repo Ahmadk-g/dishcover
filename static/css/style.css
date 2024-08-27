@@ -405,6 +405,16 @@ position: fixed; /* Sit on top of the page content */
     object-fit: cover;
 }
 
+.likes {
+    position: absolute;
+    top: 0px;
+    right: 12px;
+    background-color: #717357;
+    color: white;
+    width: 40px;
+    text-align: center;
+}
+
 .recipes:hover {
     cursor: pointer;
 }
@@ -499,14 +509,15 @@ position: fixed; /* Sit on top of the page content */
     padding: 20px;
     border: 10px solid #9ea07e;
     width: 100%;
+    margin-top: 10px;
 }
 
 .ingredients, .instructions, .recipe-info {
     width: 100%;
 }
 
-.ingredients {
-    border-right: 2px solid #9ea07e;
+.recipe-info {
+    padding: 1rem;
 }
 
 
@@ -529,6 +540,7 @@ position: fixed; /* Sit on top of the page content */
 }
 
 .like-button, .unlike-button {
+    margin-top: 10px;
     height: 38px;
     padding: 0 15px;
 }
@@ -554,6 +566,18 @@ position: fixed; /* Sit on top of the page content */
 
 
 /* About */
+
+.about-container{
+    @media(max-width: 576px) {
+        padding:20px;
+    };
+}
+
+.about-text{
+    @media(max-width: 768px) {
+        margin-top:20px;
+    }; 
+}
 
 .profile-image {
     width: 100%;
@@ -592,7 +616,6 @@ position: fixed; /* Sit on top of the page content */
 
     .recipe-info {
         width: 60%;
-        padding: 2rem;
     }
 
     .recipe-details {
@@ -602,7 +625,9 @@ position: fixed; /* Sit on top of the page content */
 
     .ingredients {
         width: 40%;
+        border-right: 2px solid #9ea07e;
     }
+
     .instructions {
         width: 55%;
     }
