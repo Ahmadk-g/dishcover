@@ -33,13 +33,89 @@ Dishcover is designed with a focus on delivering an engaging and immersive exper
 
 Overall, the UX design of Dishcover aims to create a vibrant and inclusive environment where food lovers can explore, learn, and connect, all while enjoying the rich and varied experiences the culinary world has to offer.
 
+# Scope Plane
+
+## Purpose and Goal
+
+Dishcover aims to be the ultimate online blog for food enthusiasts, offering a dynamic platform where users can explore, share, and connect over culinary experiences. It provides a rich resource for discovering recipes, reviewing dishes, and engaging with a passionate community. The goal is to foster a vibrant environment where users can exchange ideas, access diverse food content, and enjoy personalized features.
+
+## Target Audience:
+
+- ***Home Cooks:*** Individuals seeking inspiration and new recipes for everyday cooking.
+- ***Aspiring Chefs:*** Those interested in expanding their culinary skills and knowledge.
+- ***Culinary Aficionados:*** Enthusiasts passionate about exploring diverse food experiences and trends.
+- ***Food Reviewers:*** Users looking to share detailed reviews and feedback on recipes.
+
+## User needs 
+
+- Easy access to a wide variety of recipes to inspire and assist with meal planning.
+- Resources and tips to enhance cooking techniques and knowledge.
+- Features to save favorite recipes.
+- Features to filter and easily discover user recommendations.
+- Accurate and detailed recipe instructions, ingredient lists, and cooking tips.
+- Option to rate recipes to help others make informed choices.
+
+## Features
+
+- Extensive collection of diverse recipes, including detailed descriptions and user ratings.
+- User registration for personalized features.
+- Ability for users to rate recipes.
+- Content mamagement system for admins to create, delete, and update posts.
+- Interactive features and forms.
+- Advanced search and filter capabilities to quickly find specific recipes.
+
+# Structural Plane
+
+**Information Architecture**
+
+***Home Page***
+- Welcome message
+- Recipe search functionality
+- Quick links to Recipes, Add Recipe, and Contact/About pages
+
+***Recipes Page***
+- Category based filter
+- Link to add new recipe
+- Paginated recipe list view
+- Links to detailed view of every single recipe
+
+***Detailed Recipe Page***
+- Picture of Recipe
+- title and main info for recipe
+- likes and CRUD functional buttons(for if the author is the current user)
+- like and unlike button
+- detailed ingredients and instructions
+
+***Add Recipe Page/Form***
+- Create new recipe form
+
+***About & Contact Page***
+- Information about the website and purpose of people behind it
+- Contact/Collabortation form
+
+***Register, login & logout pages***
+- User registration form
+- User sign-in form
+- User sign-out form
+
+***Navigation***
+- Primary Navigation: Links to Recipes pages, about/contact page, Add recipe page, and Admin panel (for superusers)
+- Unregistered users: Addition Log-in and Register pages
+- Refistered users: Link to user favorites and User's recipes
+- Footer Navigation: Links to social media
+
+***Interaction Design***
+- Responsive design for optimal viewing across devices
+- Intuative navigation 
+- Interactive elements 
+
 # Design
 
 ## Colour Scheme
 
 Dishcover’s color scheme is thoughtfully designed to evoke warmth, sophistication, and a sense of culinary adventure. Each color has been selected to contribute to an inviting and engaging user experience.
 
-![Palette] (documentation/color/colorscheme.png)
+![Palette] (documentation/color/colorpalette.png)
 
 - **#494a37 -  earthy green-brown:** Used as a font color, it provides a strong contrast against lighter backgrounds, ensuring readability while imparting a grounded, natural feel. 
 - **#717357 - muted olive green:** It creates a visually appealing contrast that guides users effortlessly through the site.
@@ -71,4 +147,8 @@ Dishcover was developed using Agile methodology, allowing for iterative and flex
 
 ### Kanban board
 
-- A visual tool in agile project management. It visually represents the workflow stages and the status of individual user stories. The Kanban board for this project can be viewed [here](https://github.com/users/Ahmadk-g/projects/4).
+- A visual tool in agile project management. It visually represents the workflow stages and the status of individual user stories. 
+
+The Kanban board for this project can be viewed [here](https://github.com/users/Ahmadk-g/projects/4).
+
+![Kanban Board](documentation/agile/kanban.png)
