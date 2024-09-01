@@ -96,6 +96,10 @@ a.nav-link {
     color: rgb(255 198 114);
 }
 
+.ms-auto {
+    margin-right: 65px;
+}
+
 .dropdown-item {
     padding: 10px 20px;
     color: #717357;
