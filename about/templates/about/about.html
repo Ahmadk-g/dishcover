@@ -1,35 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} <!-- Load for better form rendering -->
 
 {% block content %}
-
+<!-- Main container for the about page content -->
 <div class="container mt-5 about-container">
+
   <div class="row">
-    <!-- <div class="col-4 text-center"> -->
+    <!-- Profile image section -->
     <div class="col-12 col-md-4 text-center">
       {% if "placeholder" in about.profile_image.url %}
+      <!-- Display a placeholder image if the actual profile image is a placeholder -->
       <img src="{% static 'images/nobody.jpg' %}" class="profile-image"
         alt="placeholder image" >
       {% else %}
+      <!-- Display the actual image -->
       <img src="{{ about.profile_image.url }}" class="profile-image"
         alt="{{ about.title }}" width="100%">
       {% endif %}
     </div>
+
+    <!-- About text section -->
     <div class="col-12 col-md-8 about-text">
-      <!-- Title goes between these h2 tags -->
+      <!-- Title of about section -->
       <h2>{{ about.title }}</h2>
-      <!-- Content goes directly underneath this -->
+      <!-- Content of the about section -->
       {{ about.content | safe }}
     </div>
   </div>
+
+  <!-- Section for displaying the last updated date -->
   <div class="row">
     <div class="col text-right">
-      <!-- Updated on field goes in here -->
-
       <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
     </div>
   </div>
+
+  <!-- Collaboration section -->
   <div class="row justify-content-center">
     <div class="col-12 col-md-6 my-5 collaborate-form">
         <h2>Let's collaborate!</h2>
@@ -39,14 +46,12 @@
             I'm excited to hear from you. Fill out the form
             and we can get the ball rolling!</p>
 
-        <!-- add your form here. Your submit button should 
-                            have the classes of btn, btn-secondary -->
-        
+        <!-- Collaboration form -->
         <form method="post">
-        {{ collaborate_form | crispy }}
-        {% csrf_token %}
+        {{ collaborate_form | crispy }} <!-- Render the form using crispy forms -->
+        {% csrf_token %} <!-- CSRF token for security -->
         <div class="form-button-container">
-          <button type="submit" class="btn btn-secondary">Submit</button>
+          <button type="submit" class="btn btn-secondary">Submit</button> <!-- Submit button for the form -->
         </div>
         </form>
     </div>

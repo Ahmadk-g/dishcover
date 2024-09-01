@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!-- Block to set the title of the page -->
+<!-- Block to set the title of the page dynamically using user's name-->
 {% block title %}{{ user }} Favourites{% endblock %}
 
 {% block content %}
@@ -9,34 +9,34 @@
     <!-- Section for the page header -->
     <section class="jumbotron text-center">
         <div class="container">
-            <!-- Display the user's name and a description -->
+            <!-- page title and description -->
             <h1>Your favourite recipes</h1>
             <p class="lead">Here you can view or remove your favourite recipes.</p>
         </div>
     </section>
-    <div>
-        <div class="row">
-            {% if no_favorites %}
-            <div class="no-results-message text-center">
-                <h3>No recipes were saved to favorites.</h3>
-                Check out recipes <a href="{% url 'recipes' %}">here</a>.
-            </div>
-            {% else %}
-            <!-- Loop through each post in the 'new' context variable -->
-            <div class="container d-flex flex-row flex-wrap justify-content-center">
-                {% for recipe in recipes %}
-                <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
-                        <div class="card-body">
-                        <h4 class="card-title">{{recipe.title}}</h4>
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
-            {% endif %}
+    <div class="row">
+        <!-- Check if there are no favorite recipes -->
+        {% if no_favorites %}
+        <div class="no-results-message text-center">
+            <h3>No recipes were saved to favorites.</h3>
+            <!-- Link to view recipes if there are no favorites -->
+            Check out recipes <a href="{% url 'recipes' %}">here</a>.
         </div>
+        {% else %}
+        <!-- Display favorite recipes if there are any -->
+        <div class="container d-flex flex-row flex-wrap justify-content-center">
+            {% for recipe in recipes %}
+            <a href="{% url 'recipe_details' recipe.slug %}" aria-label="Click to view {{recipe.title}}">
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
+                    <div class="card-body">
+                    <h4 class="card-title">{{recipe.title}}</h4>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

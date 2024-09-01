@@ -4,12 +4,15 @@
 
 {% block content %}
 <div class="container">
+    <!-- Form for editing a recipe -->
     <form method="post" enctype="multipart/form-data" class="form p-2">
-        <h2 class="form-title">Edit Recipe</h2>
-        {% csrf_token %}
+        <h2>Edit Recipe</h2>
+        {% csrf_token %} <!-- CSRF token for form security -->
         {{ form.media}}
-        {{form | crispy}} 
-        <button type="submit" class="btn btn-secondary">Update Recipe</button>
+        {{form | crispy}} <!-- Render the form fields with crispy forms for better styling -->
+        <div class="form-button-container">
+            <button type="submit">Update Recipe</button>
+        </div>
     </form>
 </div>
 {% endblock %}

@@ -9,33 +9,32 @@
     <!-- Section for the page header -->
     <section class="jumbotron text-center">
         <div class="container">
-            <!-- Display the user's name and a description -->
+            <!-- Display the a heading and a description for the page-->
             <h1>Your recipes</h1>
             <p class="lead">Here you can view and edit the recipes you posted</p>
         </div>
     </section>
-    <div>
-        <div class="row">
-            {% if no_recipes %}
-            <div class="no-results-message text-center">
-                You don't have any created recipes. How about you add one now <a href="{% url 'add_recipes' %}">here</a>
-            </div>
-            {% else %}
-            <!-- Loop through each post in the 'new' context variable -->
-            <div class="container d-flex flex-row flex-wrap justify-content-center">
-                {% for recipe in recipes %}
-                <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
-                        <div class="card-body">
-                        <h4 class="card-title">{{recipe.title}}</h4>
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
-            {% endif %}
+    <div class="row">
+        <!-- Check if the user has no recipes -->
+        {% if no_recipes %}
+        <div class="no-results-message text-center">
+            You don't have any created recipes. How about you add one now <a href="{% url 'add_recipes' %}">here</a>
         </div>
+        {% else %}
+        <!-- Display the user's recipes -->
+        <div class="container d-flex flex-row flex-wrap justify-content-center">
+            {% for recipe in recipes %}
+            <a href="{% url 'recipe_details' recipe.slug %}" aria-label="Click to view {{recipe.title}}">
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
+                    <div class="card-body">
+                    <h4 class="card-title">{{recipe.title}}</h4>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

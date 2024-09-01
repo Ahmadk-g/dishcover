@@ -4,42 +4,57 @@
 
 {% block content %}
 
- <!-- Filter Form -->
+<!-- Filter Form -->
 <div class="recipes-top-bar">
   <form class="filtering" method="get" action="{% url 'recipes' %}">
+    <!-- Render the category filter form fields -->
     {{ category_filter_form.as_p }}
     <button type="submit" class="button-filter-form">Filter</button>
   </form>
+  <!-- Link to add a new recipe -->
   <a class="add-recipe-link" role="button" href="{% url 'add_recipes' %}"  aria-label="Click to add new recipe">+ Add Recipe</a>
 </div>
- <!-- Recipe list -->
+
+<!-- Recipe list -->
+{% if recipes %}
 <h1 class="text-center p-2 mt-5">Latest Recipes</h1>
+{%endif%}
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% if recipes %}
+      <!-- Loop through recipes and dislpay each one as a link to the recipe's detailed view -->
       {% for recipe in recipes %}
+      <!-- <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}"> -->
       <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
           <div class="card m-3" style="width: 18rem;">
+              <!-- Display recipe image -->
               <img src="{{recipe.image.url}}" class="card-img-top img-fixed-size" alt="{{recipe.image_alt}}">
               <div class="card-body">
+                <!-- Display recipe title -->
                 <h4 class="card-title">{{recipe.title}}</h4>
+                <!-- Display number of likes -->
                 <p class="likes">{{ recipe.total_likes }} <i class="fa-solid fa-heart"></i></p>
               </div>
           </div>
       </a>
       {% endfor %}
     {% else %}
+    <!-- Message displayed when no recipes are found -->
     <div class="no-results-message text-center">
       <h3>No recipes found matching your criteria.</h3>
       <p>Try adjusting your search or filter to find what you're looking for.</p>
     </div>
     {% endif %}
 </div>
+
+<!-- Pagination controls -->
 {% if is_paginated %}
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
+        <!-- Link to precious page if available -->
         {% if page_obj.has_previous %}
         <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
         {% endif %}
+        <!-- Link to next page if available -->
         {% if page_obj.has_next %}
         <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
         {% endif %}
