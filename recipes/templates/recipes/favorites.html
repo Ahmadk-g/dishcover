@@ -7,22 +7,22 @@
 {% block content %}
 <div class="container">
     <!-- Section for the page header -->
-    <section class="jumbotron text-center">
-        <div class="container">
-            <!-- page title and description -->
-            <h1>Your favourite recipes</h1>
-            <p class="lead">Here you can view or remove your favourite recipes.</p>
-        </div>
-    </section>
+     <!-- Check if there are no favorite recipes -->
+     {% if no_favorites %}
+     <div class="no-results-message text-center">
+         <h3>No recipes were saved to favorites.</h3>
+         <!-- Link to view recipes if there are no favorites -->
+         Check out recipes <a class="here-link link" href="{% url 'recipes' %}">here</a>.
+     </div>
+     {% else %}
+    <div class="jumbotron text-center">
+        <!-- page title and description -->
+        <h1>Your favourite recipes</h1>
+        <p class="lead">Here you can view or remove your liked recipes.</p>
+    </div>
     <div class="row">
-        <!-- Check if there are no favorite recipes -->
-        {% if no_favorites %}
-        <div class="no-results-message text-center">
-            <h3>No recipes were saved to favorites.</h3>
-            <!-- Link to view recipes if there are no favorites -->
-            Check out recipes <a href="{% url 'recipes' %}">here</a>.
-        </div>
-        {% else %}
+        
+        
         <!-- Display favorite recipes if there are any -->
         <div class="container d-flex flex-row flex-wrap justify-content-center">
             {% for recipe in recipes %}

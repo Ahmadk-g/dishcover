@@ -7,20 +7,18 @@
 {% block content %}
 <div class="container">
     <!-- Section for the page header -->
-    <section class="jumbotron text-center">
-        <div class="container">
-            <!-- Display the a heading and a description for the page-->
-            <h1>Your recipes</h1>
-            <p class="lead">Here you can view and edit the recipes you posted</p>
-        </div>
-    </section>
+     <!-- Check if the user has no recipes -->
+     {% if no_recipes %}
+     <div class="no-results-message text-center">
+         You don't have any created recipes. How about you add one now by pressing <a class="here-link" href="{% url 'add_recipes' %}">here</a>
+     </div>
+     {% else %}
+    <div class="jumbotron text-center">
+        <!-- Display the a heading and a description for the page-->
+        <h1>Your recipes</h1>
+        <p class="lead">Here you can view and edit the recipes you posted</p>
+    </div>
     <div class="row">
-        <!-- Check if the user has no recipes -->
-        {% if no_recipes %}
-        <div class="no-results-message text-center">
-            You don't have any created recipes. How about you add one now <a href="{% url 'add_recipes' %}">here</a>
-        </div>
-        {% else %}
         <!-- Display the user's recipes -->
         <div class="container d-flex flex-row flex-wrap justify-content-center">
             {% for recipe in recipes %}

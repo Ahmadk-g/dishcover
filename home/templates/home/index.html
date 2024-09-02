@@ -3,58 +3,56 @@
 
 
 {% block content %}
-<div class="container d-flex justify-content-center">
-    <div class="container">
-        <div class="Hero-text row justify-content-center m-4">
+<div class="container">
+    <div class="Hero-text row justify-content-center m-4">
 
-            <!-- Main heading and introductory text -->
-            <section class="text-center col-12 col-md-8">
-                <h2 class="main title">Dishcover Your Next Favorite Dish: Recipes for Every Taste</h2>
-                <p class=" main-text pt-4">
-                    Are you stuck in a culinary rut and craving something new, or do you want to inspire others with
-                    your favorite recipes? Join us and start exploring a world of flavors today with Dishcover!
-                </p>
-            </section>
+        <!-- Main heading and introductory text -->
+        <div class="text-center col-12 col-md-8">
+            <h2 class="main title">Dishcover Your Next Favorite Dish: Recipes for Every Taste</h2>
+            <p class=" main-text pt-4">
+                Are you stuck in a culinary rut and craving something new, or do you want to inspire others with
+                your favorite recipes? Join us and start exploring a world of flavors today with Dishcover!
+            </p>
         </div>
+    </div>
 
-        <!-- Search bar for finding recipes -->
-        <div class="d-flex search-bar">
-            <H4>Find the dish you want here:</H4>
-            <form class="d-flex" method="GET" role="search" action="{% url 'recipes' %}">
-                <input class="form-control me-2" name="q" type="search" placeholder="What recipe are you looking for?"
-                    aria-label="Search">
-                <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
+    <!-- Search bar for finding recipes -->
+    <div class="d-flex search-bar">
+        <H4>Find the dish you want here:</H4>
+        <form class="d-flex" method="GET" role="search" action="{% url 'recipes' %}">
+            <input class="form-control me-2" name="q" type="search" placeholder="What recipe are you looking for?"
+                aria-label="Search">
+            <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
 
-        <!-- Call to action area with images linking to different sections -->
-        <div class="cta-area-home row justify-content-center">
+    <!-- Call to action area with images linking to different sections -->
+    <div class="cta-area-home row justify-content-center">
 
-            <!-- Link to Recipes page -->
-            <a href="{% url 'recipes' %}" class="image-container col-md-3 m-3">
-                <img src="{% static 'images/recipe-hero.jpg' %}" alt="image indicating Recipes page" class="image"
-                    style="width:100%">
-                <div class="middle">
-                    <div class="text">Recipes</div>
-                </div>
-            </a>
+        <!-- Link to Recipes page -->
+        <a href="{% url 'recipes' %}" class="image-container col-md-3 m-3">
+            <img src="{% static 'images/recipe-hero.jpg' %}" alt="image indicating Recipes page" class="image"
+                style="width:100%">
+            <div class="middle">
+                <div class="text">Recipes</div>
+            </div>
+        </a>
 
-            <!-- Link to Add Recipe page -->
-            <a href="{% url 'add_recipes' %}" class="image-container col-md-3 m-3">
-                <img src="{% static 'images/add-recipe.jpg' %}" alt="Avatar" class="image" style="width:100%">
-                <div class="middle">
-                    <div class="text">Add Recipe</div>
-                </div>
-            </a>
+        <!-- Link to Add Recipe page -->
+        <a href="{% url 'add_recipes' %}" class="image-container col-md-3 m-3">
+            <img src="{% static 'images/add-recipe.jpg' %}" alt="Avatar" class="image" style="width:100%">
+            <div class="middle">
+                <div class="text">Add Recipe</div>
+            </div>
+        </a>
 
-            <!-- Link to About page -->
-            <a href="{% url 'about' %}" class="image-container col-md-3 m-3">
-                <img src="{% static 'images/collaborate.jpg' %}" alt="Avatar" class="image" style="width:100%">
-                <div class="middle">
-                    <div class="text">Collaborate with us</div>
-                </div>
-            </a>
-        </div>
+        <!-- Link to About page -->
+        <a href="{% url 'about' %}" class="image-container col-md-3 m-3">
+            <img src="{% static 'images/collaborate.jpg' %}" alt="Avatar" class="image" style="width:100%">
+            <div class="middle">
+                <div class="text">Collaborate with us</div>
+            </div>
+        </a>
     </div>
 </div>
 

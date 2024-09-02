@@ -15,7 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import handler403, handler404, handler500
 from django.urls import path, include
+from .views import custom_403, custom_404, custom_500
+
+# Custom error handler
+handler403 = 'foodblog.views.custom_403'
+handler404 = 'foodblog.views.custom_404'
+handler500 = 'foodblog.views.custom_500'
 
 urlpatterns = [
     path("about/", include('about.urls'), name='about-urls'),

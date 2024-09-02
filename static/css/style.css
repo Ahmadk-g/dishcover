@@ -123,6 +123,11 @@ footer p {
     color: rgb(255 177 63);
 }
 
+.social-media-icon-link{
+    margin-right: 10px;
+    font-size: 20px;
+}
+
 .social-media-icon::before {
     color: #717357;
 }
@@ -200,7 +205,7 @@ footer p {
 
 .container {
     padding-top: 70px;
-    padding-bottom: 20px
+    padding-bottom: 30px
 }
 
 .cta-area-home {
@@ -578,6 +583,21 @@ footer p {
     background-color: #9ea07e;
     border-radius: 10px;
 }
+
+/* in Personalized pages */
+
+.here-link {
+    color: #717357;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.here-link:hover {
+    color: #faf4c1;
+    text-decoration: underline;
+}
+
+
 
 @media screen and (min-width: 1000px) {
 

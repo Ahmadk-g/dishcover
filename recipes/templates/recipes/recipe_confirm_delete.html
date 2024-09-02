@@ -9,7 +9,7 @@
         <form method="post">
             {% csrf_token %}
             <p>Are you sure you want to delete "{{ object.title }}"?</p>
-            <a href="{% url 'recipe_details' recipe.slug %}" class="btn sign-in-button w-25">back</a>
+            <a href="{% url 'recipe_details' recipe.slug %}" class="btn sign-in-button">back</a>
             <input type="submit" value="Confirm" class="btn sign-in-button">
         </form> 
     </div>
