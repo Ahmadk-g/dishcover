@@ -1,5 +1,5 @@
 {% extends 'base.html' %} <!-- Extends base template -->
-{% load static %} <!-- Load static files -->
+{% load static %} <!--Load static files-->
 
 
 {% block content %}
@@ -40,7 +40,7 @@
 
         <!-- Link to Add Recipe page -->
         <a href="{% url 'add_recipes' %}" class="image-container col-md-3 m-3">
-            <img src="{% static 'images/add-recipe.jpg' %}" alt="Avatar" class="image" style="width:100%">
+            <img src="{% static 'images/add-recipe.jpg' %}" alt="Add recipe" class="image" style="width:100%">
             <div class="middle">
                 <div class="text">Add Recipe</div>
             </div>
@@ -48,7 +48,7 @@
 
         <!-- Link to About page -->
         <a href="{% url 'about' %}" class="image-container col-md-3 m-3">
-            <img src="{% static 'images/collaborate.jpg' %}" alt="Avatar" class="image" style="width:100%">
+            <img src="{% static 'images/collaborate.jpg' %}" alt="Collaboration" class="image" style="width:100%">
             <div class="middle">
                 <div class="text">Collaborate with us</div>
             </div>

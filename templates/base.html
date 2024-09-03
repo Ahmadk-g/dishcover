@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% block extra_css %}  <!-- Link to Bootstrap CSS for styling and custom stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom CSS file -->
     {% endblock %}
 
@@ -59,7 +59,9 @@
 
     <!-- Include the site footer from a separate template -->
     {% include 'includes/footer.html' %}
+
+    <script src="https://kit.fontawesome.com/7fa9dd4cad.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons, loaded from CDN -->
+
 </body>
 
-<script src="https://kit.fontawesome.com/7fa9dd4cad.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons, loaded from CDN -->
 </html>
