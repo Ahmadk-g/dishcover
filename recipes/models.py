@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.utils.text import slugify
-from cloudinary.models import CloudinaryField
+from django.utils.text import slugify # Import slugify to create URL-friendly slugs from the recipe titles
+from cloudinary.models import CloudinaryField # Import CloudinaryField to handle image uploads via Cloudinary
 
 
 
@@ -17,6 +17,7 @@ CATEGORIES = (
     ('main dishes', 'Main Dishes'),
     ('desserts', 'Desserts')
 )
+# Defines the different categories a recipe can belong to, used in the Recipe model
 
 class Recipe(models.Model):
     """
@@ -38,16 +39,25 @@ class Recipe(models.Model):
     likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
     
     class Meta:
+        # Orders recipes by the date they were posted, with the most recent ones first
         ordering = ["-posted_on"]
         
     def total_likes(self):
+        """
+        Returns the total number of likes the recipe has received.
+        """
         return self.likes.count()    
         
-    # To ensure that the slug is always created when a new recipe is saved, whether through admin interface or form on site.
     def save(self, *args, **kwargs):
+        """
+        Custom save method to ensure that a slug is generated from the title if it's not already set.
+        """
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """
+        Returns the title of the recipe when the model instance is represented as a string.
+        """
         return str(self.title)
