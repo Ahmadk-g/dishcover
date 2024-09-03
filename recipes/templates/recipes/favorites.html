@@ -8,13 +8,13 @@
 <div class="container">
     <!-- Section for the page header -->
      <!-- Check if there are no favorite recipes -->
-     {% if no_favorites %}
+    {% if no_favorites %}
      <div class="no-results-message text-center">
          <h3>No recipes were saved to favorites.</h3>
          <!-- Link to view recipes if there are no favorites -->
          Check out recipes <a class="here-link link" href="{% url 'recipes' %}">here</a>.
      </div>
-     {% else %}
+    {% else %}
     <div class="jumbotron text-center">
         <!-- page title and description -->
         <h1>Your favourite recipes</h1>

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -141,6 +142,9 @@ DATABASES = {
 
 # Add or update the CONN_MAX_AGE setting for resolving too much database connections
 DATABASES['default']['CONN_MAX_AGE'] = 300 
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 
 CSRF_TRUSTED_ORIGINS = [
