@@ -89,7 +89,7 @@ This approach ensured the webpage adapts seamlessly to different screen sizes an
 
 ## Validator Testing
 
-### Python
+### Python Validation
 
 [PEP8 CI Linter](https://pep8ci.herokuapp.com/) provided by the Code Institute according to the PEP 8 style guide for validating the Python code.
 
@@ -126,6 +126,28 @@ Python File | Results | Comment |
 |views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-views.py.png) </details> | No Errors
 |apps.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-apps.py.png) </details> | No Errors
 
+### HTML Validation
+
+[**HTML W3C Markup Validator**](https://validator.w3.org/) was used for validating html files.
 
 
+The [**W3C Markup Validator**](https://validator.w3.org/) is a tool that helps ensure the HTML code meets web standards. By checking for errors and inconsistencies, it helps improve code quality, browser compatibility, and accessibility, leading to more reliable and SEO-friendly web pages.
 
+
+#### HTML Validation Results
+
+HTML File | Results | Validation results pdf | Comments
+|------------|------------------------------|--------------------------------------|--------|
+|index.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/index.pdf) | No Errors
+|recipes.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/recipes.pdf) | No Errors
+|about.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/about.pdf) | No Errors
+|add_recipe.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/addrecipe.pdf) | No Errors
+|edit_recipe.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/editrecipe.pdf) | No Errors
+|delete_recipe.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/delete.pdf) | No Errors
+|recipe_confirm_delete.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/delete.pdf) | No Errors
+|myrecipes.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/myrecipes.pdf) | No Errors
+|favorites.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/favorites.pdf) | No Errors
+|recipe_details.html|![w3 Results](documentation/testing/htmlw3/recipedetails-results.png) |[View PDF](documentation/testing/htmlw3/recipedetails.pdf) | Summernote fields
+|login.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/login.pdf) | No Errors
+|logout.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/logout.pdf) | No Errors
+|signup.html|![w3 Results](documentation/testing/htmlw3/signup-results.png) |[View PDF](documentation/testing/htmlw3/signup.pdf) | Django forms
