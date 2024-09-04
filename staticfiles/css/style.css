@@ -22,11 +22,6 @@ a, li {
     margin-right: 65px;
 }
 
-.no-header{
-    display: none;
-}
-
-
 /* General styles*/
 .body-content {
     display: flex;
@@ -222,7 +217,7 @@ footer p {
 .search-bar {
     justify-content: center;
     flex-direction: column;
-    color: #494a37;
+    color: #2a2b1f;
     background-color: #9ea07e;
     padding: 50px;
     align-items: center;
