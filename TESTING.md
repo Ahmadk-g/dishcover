@@ -151,3 +151,37 @@ HTML File | Results | Validation results pdf | Comments
 |login.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/login.pdf) | No Errors
 |logout.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/logout.pdf) | No Errors
 |signup.html|![w3 Results](documentation/testing/htmlw3/signup-results.png) |[View PDF](documentation/testing/htmlw3/signup.pdf) | Django forms
+
+
+#### Lighthouse Testing
+
+All Lighthouse testing was performed on the deployed website using Chrome Developer Tools Lighthouse Report.
+
+Page | Results | 
+|------------------|------------------------------|
+| Home | <img src="documentation/testing/lighthouse/desktop-home.png" alt="Lighthouse Desktop" width="300"/>
+| Recipes | <img src="documentation/testing/lighthouse/desktop-recipes.png" alt="Lighthouse Desktop" width="300"/>
+| Add Recipe | <img src="documentation/testing/lighthouse/desktop-addrecipe.png" alt="Lighthouse Desktop" width="300"/>
+| Delete Recipe | <img src="documentation/testing/lighthouse/desktop-delete.png" alt="Lighthouse Desktop" width="300"/>
+| About | <img src="documentation/testing/lighthouse/desktop-about.png" alt="Lighthouse Desktop" width="300"/>
+| My Recipes | <img src="documentation/testing/lighthouse/desktop-myrecipes.png" alt="Lighthouse Desktop" width="300"/>
+| Favorites | <img src="documentation/testing/lighthouse/desktop-favorites.png" alt="Lighthouse Desktop" width="300"/>
+| Login | <img src="documentation/testing/lighthouse/desktop-login.png" alt="Lighthouse Desktop" width="300"/>
+| Logout | <img src="documentation/testing/lighthouse/desktop-logout.png" alt="Lighthouse Desktop" width="300"/>
+| Signup | <img src="documentation/testing/lighthouse/desktop-signup.png" alt="Lighthouse Desktop" width="300"/>
+
+
+### Resolved Issues:
+
+- While aiming for better semantic structure by using <**section**> instead of <**div**>, I encountered more errors in certain files when validating with the W3C Markup Validator. I resolved these issues by reverting to <**div**>.
+
+
+
+
+
+<br>
+<br>
+
+Back to [README.md](README.md)
+
+
