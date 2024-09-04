@@ -1,14 +1,18 @@
 {% extends "base.html" %} <!-- Inherit from base template -->
+{% load static %}
 
 
 {% block content %}
     <div class="container d-flex flex-wrap">
+
         <!-- Main details of the recipe -->
-        <div class="recipe-main-details mt-3">
+        <section class="recipe-main-details mt-3">
+
             <!-- Recipe image section -->
             <div class="recipe-image">
                 <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="recipe-pic">
             </div>
+
             <!-- Recipe information section -->
             <div class="recipe-info">
                 <h2 class="recipe-title text-center">{{recipe.title}}</h2>
@@ -29,6 +33,7 @@
                 <!-- Like/Unlike button functionality -->
                 <form action="{% url 'like_recipe' recipe.slug %}" method="POST" class="d-inline">
                     {% csrf_token %} <!-- CSRF token for security -->
+
                     <!-- Change button text based on wether the user has liked the recipe -->
                     {% if user in recipe.likes.all %}
                         <button type="submit" class="button unlike-button">Unlike</button>
@@ -41,10 +46,10 @@
                 {% endif %}
                 <p>{{ recipe.total_likes }} likes</p>
             </div>
-        </div>
+        </section>
 
         <!-- Recipe details (Ingrdients and Instructions) -->
-        <div class="recipe-details">
+        <section class="recipe-details">
             <div class="ingredients p-3">
                 <h3>Ingredients</h3>
                 <p>{{ recipe.ingredients | safe }}</p>
@@ -53,7 +58,7 @@
                 <h3>Instructions</h3>
                 <p>{{ recipe.instructions | safe }}</p>
             </div>
-        </div>
+        </section>
     </div>
 {% endblock %}
 

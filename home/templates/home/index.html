@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="Hero-text row justify-content-center m-4">
+    <section class="Hero-text row justify-content-center m-4">
 
         <!-- Main heading and introductory text -->
         <div class="text-center col-12 col-md-8">
@@ -14,20 +14,20 @@
                 your favorite recipes? Join us and start exploring a world of flavors today with Dishcover!
             </p>
         </div>
-    </div>
+    </section>
 
     <!-- Search bar for finding recipes -->
-    <div class="d-flex search-bar">
+    <section class="d-flex search-bar">
         <H4>Find the dish you want here:</H4>
         <form class="d-flex" method="GET" role="search" action="{% url 'recipes' %}">
             <input class="form-control me-2" name="q" type="search" placeholder="What recipe are you looking for?"
                 aria-label="Search">
             <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-    </div>
+    </section>
 
     <!-- Call to action area with images linking to different sections -->
-    <div class="cta-area-home row justify-content-center">
+    <section class="cta-area-home row justify-content-center">
 
         <!-- Link to Recipes page -->
         <a href="{% url 'recipes' %}" class="image-container col-md-3 m-3">
@@ -53,7 +53,7 @@
                 <div class="text">Collaborate with us</div>
             </div>
         </a>
-    </div>
+    </section>
 </div>
 
 {% endblock %}

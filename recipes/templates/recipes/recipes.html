@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
 
-<!-- Filter Form -->
-<div class="recipes-top-bar">
+<!-- Section for Filter Form and Add Recipe Link -->
+<section class="recipes-top-bar">
   <form class="filtering" method="get" action="{% url 'recipes' %}">
     <!-- Render the category filter form fields -->
     {{ category_filter_form.as_p }}
@@ -13,17 +14,15 @@
   </form>
   <!-- Link to add a new recipe -->
   <a class="add-recipe-link" role="button" href="{% url 'add_recipes' %}"  aria-label="Click to add new recipe">+ Add Recipe</a>
-</div>
+</section>
 
 <!-- Recipe list -->
-{% if recipes %}
-<h1 class="text-center p-2 mt-5">Latest Recipes</h1>
-{%endif%}
-<div class="container d-flex flex-row flex-wrap justify-content-center">
-    {% if recipes %}
+<section>
+  {% if recipes %}
+  <h2 class="text-center p-2 mt-5">Latest Recipes</h2>
+  <div class="container d-flex flex-row flex-wrap justify-content-center">
       <!-- Loop through recipes and dislpay each one as a link to the recipe's detailed view -->
       {% for recipe in recipes %}
-      <!-- <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}"> -->
       <a href="{% url 'recipe_details' recipe.slug %}" class="recipes" aria-label="Click to view {{recipe.title}}">
           <div class="card m-3" style="width: 18rem;">
               <!-- Display recipe image -->
@@ -37,14 +36,16 @@
           </div>
       </a>
       {% endfor %}
-    {% else %}
-    <!-- Message displayed when no recipes are found -->
-    <div class="no-results-message text-center">
-      <h3>No recipes found matching your criteria.</h3>
-      <p>Try adjusting your search or filter to find what you're looking for.</p>
-    </div>
-    {% endif %}
-</div>
+  </div>
+
+  {% else %}
+  <!-- Message displayed when no recipes are found -->
+  <div class="container no-results-message text-center">
+    <h3>No recipes found matching your criteria.</h3>
+    <p>Try adjusting your search or filter to find what you're looking for.</p>
+  </div>
+  {% endif %}
+</section>
 
 <!-- Pagination controls -->
 {% if is_paginated %}

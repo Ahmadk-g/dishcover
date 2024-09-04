@@ -2,24 +2,28 @@
 {% load static %}
 
 <!-- Block to set the title of the page -->
-{% block title %}{{ user }}My Recipes{% endblock %}
+{% block title %}My Recipes{% endblock %}
 
 {% block content %}
-<div class="container">
+<section class="container">
     <!-- Section for the page header -->
-     <!-- Check if the user has no recipes -->
-     {% if no_recipes %}
-     <div class="no-results-message text-center">
-         You don't have any created recipes. How about you add one now by pressing <a class="here-link" href="{% url 'add_recipes' %}">here</a>
-     </div>
-     {% else %}
+    <!-- Check if the user has no recipes -->
+    {% if no_recipes %}
+
+    <div class="no-results-message text-center">
+        You don't have any created recipes. How about you add one now by pressing <a class="here-link" href="{% url 'add_recipes' %}">here</a>
+    </div>
+
+    {% else %}
+
+    <!-- Display the a heading and a description for the page-->
     <div class="jumbotron text-center">
-        <!-- Display the a heading and a description for the page-->
         <h1>Your recipes</h1>
         <p class="lead">Here you can view and edit the recipes you posted</p>
     </div>
+
+    <!-- Display the user's recipes -->
     <div class="row">
-        <!-- Display the user's recipes -->
         <div class="container d-flex flex-row flex-wrap justify-content-center">
             {% for recipe in recipes %}
             <a href="{% url 'recipe_details' recipe.slug %}" aria-label="Click to view {{recipe.title}}">
@@ -32,7 +36,7 @@
             </a>
             {% endfor %}
         </div>
-        {% endif %}
     </div>
-</div>
+    {% endif %}
+</section>
 {% endblock %}

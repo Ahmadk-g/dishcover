@@ -6,14 +6,14 @@
 
 {% block content %}
 <div class="container sign-in-form-container">
-    <div class="row">
+    <section class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign Out" %}</h3>
 
             <p>{% trans 'Are you sure you want to sign out?' %}</p>
         </div>
-    </div>
-    <div class="row">
+    </section>
+    <section class="row">
         <div class="col-md-8 mt-3 offset-md-2">
 
             <form method="post" class="sign-up-form" action="{% url 'account_logout' %}">
@@ -25,6 +25,6 @@
                 <button class="btn sign-in-button right" type="submit">{% trans 'Sign Out' %}</button>
             </form>
         </div>
-    </div>
+    </section>
 </div>
 {% endblock %}

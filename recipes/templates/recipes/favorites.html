@@ -2,28 +2,29 @@
 {% load static %}
 
 <!-- Block to set the title of the page dynamically using user's name-->
-{% block title %}{{ user }} Favourites{% endblock %}
+{% block title %}My Favourites{% endblock %}
 
 {% block content %}
-<div class="container">
+<section class="container">
     <!-- Section for the page header -->
-     <!-- Check if there are no favorite recipes -->
+    <!-- Check if there are no favorite recipes -->
     {% if no_favorites %}
      <div class="no-results-message text-center">
          <h3>No recipes were saved to favorites.</h3>
          <!-- Link to view recipes if there are no favorites -->
          Check out recipes <a class="here-link link" href="{% url 'recipes' %}">here</a>.
      </div>
+
     {% else %}
+
+    <!-- page title and description -->
     <div class="jumbotron text-center">
-        <!-- page title and description -->
         <h1>Your favourite recipes</h1>
         <p class="lead">Here you can view or remove your liked recipes.</p>
     </div>
+
+    <!-- Display favorite recipes if there are any -->
     <div class="row">
-        
-        
-        <!-- Display favorite recipes if there are any -->
         <div class="container d-flex flex-row flex-wrap justify-content-center">
             {% for recipe in recipes %}
             <a href="{% url 'recipe_details' recipe.slug %}" aria-label="Click to view {{recipe.title}}">
@@ -36,7 +37,7 @@
             </a>
             {% endfor %}
         </div>
-        {% endif %}
     </div>
-</div>
+    {% endif %}
+</section>
 {% endblock %}

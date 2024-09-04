@@ -15,7 +15,7 @@
           </button>
 
           <!-- Navigation items -->
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <section class="collapse navbar-collapse" id="navbarNav">
             <div>
               <ul class="navbar-nav">
                 <!-- Home link -->
@@ -45,10 +45,10 @@
                 </li>
                 {% endif %}
               </ul>
-            </div>
+            </section>
 
             <!-- Right-side user account and authentication links -->
-            <div class="d-flex align-items-end ms-auto">
+            <section class="d-flex align-items-end ms-auto">
               {% if user.is_authenticated %}
               <div class="d-flex justify-content-center dropdown">
                 <!-- User dropdown for authenticated users -->
@@ -76,8 +76,8 @@
                   </li>
                 </ul>
                 {% endif %}
-            </div>
-          </div>
+              </div>
+            </section>
         </div>
       </nav>
 </header>

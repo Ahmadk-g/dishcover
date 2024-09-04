@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Delete recipe {{ object.title }}{% endblock %}
+{% block title %} Delete recipe {{ object.title }}{% endblock %}
 
 {% block content %}
-<div class="container">
+<section class="container">
     <h1 class="text-center mt-2">Confirm Recipe Deletion</h1>
     <div class="d-flex justify-content-center pt-3">
         <form method="post">
@@ -13,5 +14,5 @@
             <input type="submit" value="Confirm" class="btn sign-in-button">
         </form> 
     </div>
-</div>
+</section>
 {% endblock %}

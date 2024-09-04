@@ -34,7 +34,7 @@
 
         <!-- For displaying Django messages -->
         {% if messages %}
-        <div class="alert-container">
+        <section class="alert-container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     {% for message in messages %}
@@ -46,14 +46,15 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
+        </section>
         {% endif %}
-
-        <div class="body-content">
+        
+        <!-- Body Content goes here -->
+        <section class="body-content">
             {% block content %}
             <!-- Placeholder for content to be provided by child templates -->
             {% endblock content %}
-        </div>
+        </section>
 
     </main>
 

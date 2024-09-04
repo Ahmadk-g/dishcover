@@ -6,7 +6,9 @@
 <!-- Main container for the about page content -->
 <div class="container mt-5 about-container">
 
-  <div class="row">
+  <!-- Section for Profile image and About us text -->
+  <section class="row">
+
     <!-- Profile image section -->
     <div class="col-12 col-md-4 text-center">
       {% if "placeholder" in about.profile_image.url %}
@@ -27,17 +29,17 @@
       <!-- Content of the about section -->
       {{ about.content | safe }}
     </div>
-  </div>
+  </section>
 
   <!-- Section for displaying the last updated date -->
-  <div class="row">
+  <section class="row">
     <div class="col text-right">
       <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
     </div>
-  </div>
+  </section>
 
   <!-- Collaboration section -->
-  <div class="row justify-content-center">
+  <section class="row justify-content-center">
     <div class="col-12 col-md-6 my-5 collaborate-form">
         <h2>Let's collaborate!</h2>
         <p>I believe in the power of shared knowledge and collective effort.
@@ -55,6 +57,6 @@
         </div>
         </form>
     </div>
-  </div>  
+  </section>  
 </div>
 {% endblock content %}
