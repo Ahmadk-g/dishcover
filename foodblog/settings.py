@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '8080-ahmadkg-dishcover-3799hqjd0z3.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -70,7 +70,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 SUMMERNOTE_CONFIG = {
     # You can put custom Summernote settings
     'summernote': {
-        
+
         # Change editor size
         'width': '100%',
         'height': '480',
@@ -79,13 +79,12 @@ SUMMERNOTE_CONFIG = {
         # https://summernote.org/deep-dive/#custom-toolbar-popover
         'toolbar': [
             ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript', 'fontname', 'fontsize']],
+            ['font', ['strikethrough', 'subscript', 'fontname', 'fontsize']],
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']]
         ],
-        # 'fontNames': ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Merriweather'],
-        'fontSizes': ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '26', '28', '36'],
+        'fontSizes': ['8', '10', '11', '12', '14', '16', '18', '20', '22'],
     },
 }
 
@@ -140,8 +139,8 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-# Add or update the CONN_MAX_AGE setting for resolving too much database connections
-DATABASES['default']['CONN_MAX_AGE'] = 300 
+# Update the CONN_MAX_AGE setting for resolving too much database connections
+DATABASES['default']['CONN_MAX_AGE'] = 300
 
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
@@ -160,16 +159,20 @@ CSRF_TRUSTED_ORIGINS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 
@@ -197,6 +200,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+# Cloudinary Settings
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -5,6 +5,7 @@ def custom_403(request, exception):
     """Custom 403 Forbidden view."""
     return render(request, 'errors/403.html', status=403)
 
+
 def custom_404(request, exception):
     """
     Custom 404 error handler.

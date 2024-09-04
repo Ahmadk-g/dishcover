@@ -1,16 +1,16 @@
-from django.shortcuts import render # For rendering templates with context data
-from django.contrib import messages # For displaying succrss/error messages to users
+from django.shortcuts import render  # For rendering templates w/ context data
+from django.contrib import messages  # For displaying messages to users
 from .models import About
 from .forms import CollaborateForm
 
 # Create your views here.
 
-    
+
 def about_me(request):
     """
     Renders the most recent information on the website author
-    and allows user collaboration requests 
-    
+    and allows user collaboration requests
+
     Displays an individual instance of :model:'about.About'.
     **Context**
     'about':
@@ -23,7 +23,7 @@ def about_me(request):
 
     # Retrieve the most recent About instance, ordered by the last updated date
     about = About.objects.all().order_by('-updated_on').first()
-    
+
     # Handle the form submission if the request is a POST
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
@@ -32,14 +32,14 @@ def about_me(request):
             collaborate_form.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'We got your message! We endeavour to respond within 2 working days'
+                "We received your message! We'll respond within 3 days."
             )
     collaborate_form = CollaborateForm()
 
     return render(
         request,
         "about/about.html",
-        {"about": about, 
+        {"about": about,
          "collaborate_form": collaborate_form
          },
     )

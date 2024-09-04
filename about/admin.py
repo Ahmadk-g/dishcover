@@ -3,7 +3,7 @@ from .models import About, CollaborateRequest
 from django_summernote.admin import SummernoteModelAdmin
 
 
-# Admin configuration for the About model, using Summernote for rich text editing
+# Admin configuration for About model, using Summernote for rich text editing
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
     # Enable the Summernote editor for the 'content' field

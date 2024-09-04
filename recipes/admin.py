@@ -3,7 +3,6 @@ from .models import Recipe
 from django_summernote.admin import SummernoteModelAdmin
 
 
-
 # Register the Recipe model
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
