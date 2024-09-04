@@ -6,7 +6,7 @@
 {% block content %}
 
 <!-- Section for Filter Form and Add Recipe Link -->
-<section class="recipes-top-bar">
+<div class="recipes-top-bar">
   <form class="filtering" method="get" action="{% url 'recipes' %}">
     <!-- Render the category filter form fields -->
     {{ category_filter_form.as_p }}
@@ -14,7 +14,7 @@
   </form>
   <!-- Link to add a new recipe -->
   <a class="add-recipe-link" role="button" href="{% url 'add_recipes' %}"  aria-label="Click to add new recipe">+ Add Recipe</a>
-</section>
+</div>
 
 <!-- Recipe list -->
 <section>

@@ -4,7 +4,7 @@
 <header>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-        <!-- Logo -->
+          <!-- Logo -->
           <a class="navbar-brand" href="{% url 'home' %}">
             <img id="logo-image" src="{% static '/images/logo.png' %}" alt="3d cubes logo" width="100">
           </a>
@@ -15,7 +15,7 @@
           </button>
 
           <!-- Navigation items -->
-          <section class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <div>
               <ul class="navbar-nav">
                 <!-- Home link -->
@@ -45,10 +45,10 @@
                 </li>
                 {% endif %}
               </ul>
-            </section>
+            </div>
 
             <!-- Right-side user account and authentication links -->
-            <section class="d-flex align-items-end ms-auto">
+            <div class="d-flex align-items-end ms-auto">
               {% if user.is_authenticated %}
               <div class="d-flex justify-content-center dropdown">
                 <!-- User dropdown for authenticated users -->
@@ -63,7 +63,7 @@
                     <!-- Logout link -->
                     <li><a class="dropdown-item {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a></li>
                 </ul>
-                </li>
+              </div>
                 {% else %}
                 <!-- Register and Login links for unauthenticated users -->
                 <ul class="navbar-nav">
@@ -76,8 +76,8 @@
                   </li>
                 </ul>
                 {% endif %}
-              </div>
-            </section>
+            </div>
+          </div>
         </div>
       </nav>
 </header>

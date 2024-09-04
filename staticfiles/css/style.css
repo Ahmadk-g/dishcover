@@ -22,6 +22,10 @@ a, li {
     margin-right: 65px;
 }
 
+.no-header{
+    display: none;
+}
+
 
 /* General styles*/
 .body-content {
