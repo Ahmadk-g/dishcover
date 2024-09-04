@@ -15,6 +15,7 @@
     </div>
   </section>
   <section class="row">
+    <h2 style="display: none;">null</h2> <!--Symantic purposes-->
     <div class="col-md-8 mt-3 offset-md-2">
       <form class="sign-up-form" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
