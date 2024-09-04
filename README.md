@@ -339,9 +339,9 @@ The About page provides an overview of Dishcover, detailing the website's missio
 ![Home Page](documentation/features/about.png)
 </details>
 
-## User Tailored Features
+### User Tailored Features
 
-### My Recipes Page
+#### My Recipes Page
 
 The My Recipes page displays all the recipes a user has created, allowing easy access to edit or delete them. It provides a personalized space for users to manage their culinary creations efficiently.
 
@@ -351,7 +351,7 @@ The My Recipes page displays all the recipes a user has created, allowing easy a
 ![Home Page](documentation/features/myrecipes.png)
 </details>
 
-### Favorites Page
+#### Favorites Page
 
 The My Favorites page showcases a personalized collection of recipes that a user has liked, making it easy to revisit and enjoy their top culinary picks anytime.
 
@@ -361,10 +361,11 @@ The My Favorites page showcases a personalized collection of recipes that a user
 ![Home Page](documentation/features/favorites.png)
 </details>
 <br>
+
 If the user hasn't liked any recipes, they get a different view. Same case for 'My Recipes'.
 
 <details>
-<summary><strong>Click to View 'Message' </strong></summary>
+<summary><strong>Click to View 'Empty page' </strong></summary>
 
 ![Home Page](documentation/features/nofavorites.png)
 </details>
@@ -374,7 +375,149 @@ If the user hasn't liked any recipes, they get a different view. Same case for '
 The authentication pages on Dishcover include login, signup, and logout. The _login_ page lets users securely access their accounts by entering their credentials, while the _signup_ page allows new users to join quickly by provideing necessary information. The _logout_ function ensures safe and easy account exit, protecting user information.
 
 <details>
-<summary><strong>Click to View 'Login' Page</strong></summary>
+<summary><strong>Click to View User Authentication Pages</strong></summary>
+<br>
 
-![Home Page](documentation/features/favorites.png)
+**Login Page**:
+
+![Features](documentation/features/login.png)
+
+<br>
+
+**Logout Page**:
+
+![Features](documentation/features/logout.png)
+
+<br>
+
+**Sign Up Page**:
+
+![Features](documentation/features/signup.png)
 </details>
+
+###  Feedback Messages
+
+The Feedback Messages feature provides real-time notifications to users, confirming their actions or alerting them to errors. This enhances user experience by offering clear, immediate responses, helping users understand the outcome of their actions on the website or app. For a better user experience, these notifications automatically fade out after a few seconds.
+
+<details>
+<summary><strong>Click to View 'Messages'</strong></summary>
+<br>
+
+After **Logging in**:
+
+![Features](documentation/features/login-alert.png)
+
+<br>
+
+After **Logging out**:
+
+![Features](documentation/features/signout-alert.png)
+<br>
+
+After **Liking a recipe**:
+
+![Features](documentation/features/like-alert.png)
+<br>
+
+After **Unliking a recipe**:
+
+![Features](documentation/features/unlike-alert.png)
+<br>
+
+After **Creating a recipe**:
+
+![Features](documentation/features/addrecipe-alert.png)
+<br>
+
+After **Deleting a recipe**:
+
+![Features](documentation/features/delete-alert.png)
+</details>
+
+<br>
+
+# Future Features
+
+### Add Recipe Form
+
+- Automatically number instructions as Step 1, Step 2, etc.
+- Prefill bullet points for ingredients.
+- Standardize Summernote Rich Text fields with a single font family and size.
+
+### Recipes List Page
+
+- Implement a search bar as the one in the home page for easier navigation.
+- Include a 'Remove Filter' button for resetting filters.
+
+### Detailed Recipe view
+
+- Introduce a comment form to encourage user interaction.
+- Add a back button for easier navigation.
+
+### User Features
+
+- Allow users to create profiles with the option to upload a profile image, along with additional features such as:
+    - Following other users.
+    - Recieving notifications.
+
+
+
+# Technology Used
+
+### FrontEnd
+
+- [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+- [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+- [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+- [**Bootstrap**](https://getbootstrap.com/)
+
+### Backend
+
+- [**Django**](https://www.djangoproject.com/)
+
+- [**Python**](https://www.python.org/)
+
+### Deployment and Version Control
+
+- [**Git**](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git)
+
+- [**GitHub**](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) 
+
+- [**Heroku**](https://dashboard.heroku.com/apps)
+
+### Development Tools
+
+- [**VScode**](https://code.visualstudio.com/docs)
+
+
+
+## Deployment
+
+The live link can be found here - [Word Wander](https://word-wander-c212ee79ed5a.herokuapp.com/)
+
+This project was deployed using the Code Institute's mock terminal for Heroku.
+
+__Steps for deployment__:
+
+1. Create an account or log in to Heroku.
+2. On the dashboard, in the right corner click the button that says "New" and choose "Create New App".
+3. Pick a name of the app. The name has to be unique because it can't match any other name being used.
+4. Select your region, United States or Europe.
+5. Add payment method if needed.
+6. Click "Create App".
+7. On the menu at the top of the page, go to the Settings Tab.
+8. Scroll down to Config Vars and click "Reveal Config Vars".
+9. Add a new Config Var and enter PORT in the keybox and 8000 in the valuebox.
+10. Under Config Vars you will find Buildpacks.
+11. Click "Add Buildpacks".
+12. Select python.
+13. Repeat this step but select nodejs.
+14. Important to know: The python has to be picked before the nodejs, if it is not in order 6you can change the order by click and drag to correct the order.
+15. Scroll back to the top of the page, to the menu and go to the Deploy Tab.
+16. Select GitHub as the deployment method and confirm.
+17. Search for you repository name and connect that.
+18. Scroll down to the bottom of the page and there you can choose if you want the deploys to be Automatic or Manually. The Manually deployed branches needs redepolying each time the repository is updated.
+19. Click "View" to see the live site.
