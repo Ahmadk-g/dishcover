@@ -53,7 +53,8 @@ Page/View | What was tested | Expected outcome | Result |
 | Feedback Messages | login | "Successfully signed in as {User}" | Passed |
 | Feedback Messages | Fade out | message fade out in seconds | Passed |
 | Admin Dashboard | Admin Panel Access | Appears in Navbar for superusers | Passed |
-
+| Error - 404 | Appending a page url that does not exist  | Redirect to 404 - Page not found | Passed |
+| Error - 404 | Appending a page url unauthorized  | Redirect to 403 page - Unauthorized access | Passed |
 ## Automated Testing 
 
 Automated testing in Django and Python is essential for maintaining code quality and reliability. Django’s built-in testing framework, which integrates with Python's unittest module, supports the creation of various tests. For example, test_forms.py and test_views.py focus on unit and functional tests for forms and views, verifying that they work correctly. Automated testing helps quickly identify and address issues, maintain code integrity, and improve the overall stability and performance of the application.
@@ -111,6 +112,8 @@ Python File | Results | Comment |
 |admin.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-admin.py.png) </details> | No Errors
 |forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-forms.py.png) </details> | No Errors
 |models.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-models.py.png) </details> | No Errors
+|test_forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipes-test-forms.png) </details> | No Errors
+|test_views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipes-test-views.png) </details> | No Errors
 |urls.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-urls.py.png) </details> | No Errors
 |views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-views.py.png) </details> | Long lines can't be divided
 |apps.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-apps.py.png) </details> | No Errors
@@ -122,6 +125,8 @@ Python File | Results | Comment |
 |admin.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-admin.py.png) </details> | No Errors
 |forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-forms.py.png) </details> | No Errors
 |models.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-models.py.png) </details> | No Errors
+|test_forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-test-forms.png) </details> | No Errors
+|test_views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-test-views.png) </details> | No Errors
 |urls.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-urls.py.png) </details> | No Errors
 |views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-views.py.png) </details> | No Errors
 |apps.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/about-apps.py.png) </details> | No Errors
@@ -151,9 +156,36 @@ HTML File | Results | Validation results pdf | Comments
 |login.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/login.pdf) | No Errors
 |logout.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/logout.pdf) | No Errors
 |signup.html|![w3 Results](documentation/testing/htmlw3/signup-results.png) |[View PDF](documentation/testing/htmlw3/signup.pdf) | Django forms
+|403.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/403.pdf) | No Errors
+|404.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/404.pdf) | No Errors
+|500.html|![w3 Results](documentation/testing/htmlw3/nowarnings.png) |[View PDF](documentation/testing/htmlw3/500.pdf) | No Errors
+ 
 
 
-#### Lighthouse Testing
+### CSS Validation
+
+[**W3C CSS Validator**](https://jigsaw.w3.org/css-validator/) was used  to thoroughly check and validate the CSS files for the project. This tool ensures that the CSS adheres to current web standards, identifying any errors or warnings that could affect the site's performance and cross-browser compatibility. The code was clear of any errors or mistakes.
+
+<details> 
+<summary><strong>Click to View Results</strong></summary>
+
+![CSS Results](documentation/testing/cssvalid.png)
+</details>
+
+
+### JavaScript Validation
+
+[**JSLint/JSHint**](https://jshint.com/) was used for validating and testing JavaScript code. The code passed without warning nor errors.
+
+<details> 
+<summary><strong>Click to View Results</strong></summary>
+
+![CSS Results](documentation/testing/js-script.png)
+</details>
+
+
+
+### Lighthouse Testing
 
 All Lighthouse testing was performed on the deployed website using Chrome Developer Tools Lighthouse Report.
 
@@ -175,6 +207,11 @@ Page | Results |
 
 - While aiming for better semantic structure by using <**section**> instead of <**div**>, I encountered more errors in certain files when validating with the W3C Markup Validator. I resolved these issues by reverting to <**div**>.
 
+
+## Future Improvements
+1. Reduce size of images for better performance.
+2. Improve website accessibility by detecting and addressing issues to meet web accessibility standards and guidelines, ensuring a smooth experience for users with disabilities.
+3.  Improve contrast errors.
 
 
 
