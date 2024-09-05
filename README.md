@@ -4,6 +4,9 @@
 
 Link to live website: [CLICK HERE!](https://dishcover-c2716dc71705.herokuapp.com/)
 
+
+![Responsive Image](documentation/Responsive-image.png)
+
 # Introduction
 
 ## Dishcover
@@ -436,6 +439,28 @@ After **Deleting a recipe**:
 
 <br>
 
+### Error pages
+
+**403 Forbidden**: Displays when a user tries to access a resource they are not permitted to view. This page informs users of access restrictions.
+
+<details>
+<summary><strong>Click to View 403 Page</strong></summary>
+
+![Home Page](documentation/features/403.png)
+</details>
+<br>
+
+**404 Not Found:** Appears when a requested page cannot be found on the server. This page helps users navigate back to functional parts of the site.
+
+<details>
+<summary><strong>Click to View 404 Page</strong></summary>
+
+![Home Page](documentation/features/404.png)
+</details>
+<br>
+
+**500 Internal Server Error:** Shown when the server encounters an unexpected condition. This page notifies users of a server issue and provides a user-friendly message.
+
 # Future Features
 
 ### Add Recipe Form
@@ -466,58 +491,145 @@ After **Deleting a recipe**:
 
 ### FrontEnd
 
-- [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [**HTML:**](https://developer.mozilla.org/en-US/docs/Web/HTML) Used for structuring the content of web pages.
 
-- [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [**CSS:**](https://developer.mozilla.org/en-US/docs/Web/CSS) Applied for styling and layout of the website.
 
-- [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [**JavaScript:**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) Added interactivity and dynamic behavior to the website.
 
-- [**Bootstrap**](https://getbootstrap.com/)
+- [**Bootstrap:**](https://getbootstrap.com/) Utilized for responsive design and UI components.
 
 ### Backend
 
-- [**Django**](https://www.djangoproject.com/)
+- [**Django:**](https://www.djangoproject.com/) Handled backend functionality, including database management and user authentication.
 
-- [**Python**](https://www.python.org/)
+- [**Python:**](https://www.python.org/) Powered server-side logic and supported Django framework for web development.
+
+- [**CI databse:**](https://dbs.ci-dbs.net/) Used for storing and managing application data during development and deployment, available for _Code Institute students_.
 
 ### Deployment and Version Control
 
-- [**Git**](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git)
+- [**Git:**](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) Tracked code changes and version control.
 
-- [**GitHub**](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) 
+- [**GitHub:**](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) Hosted the repository for collaboration and project management.
 
-- [**Heroku**](https://dashboard.heroku.com/apps)
+- [**Heroku:**](https://dashboard.heroku.com/apps) Deployed the app to a live cloud environment.
 
 ### Development Tools
 
-- [**VScode**](https://code.visualstudio.com/docs)
+- [**VScode**](https://code.visualstudio.com/docs) Used as the primary code editor for development and debugging.
 
+### Validation Tools
+
+- [**W3C Markup Validation Service:**](https://validator.w3.org/) For **HTML** code validation.
+- [**W3C CSS Validation Service:**](https://jigsaw.w3.org/css-validator/) For **CSS** code validation.
+- [**CI Python Linter:**](https://pep8ci.herokuapp.com/) For **Python** code validation
+- [**Google Lighthous:e**](https://developers.google.com/web/tools/lighthouse) Used to audit and improve the performance, accessibility, and SEO of the website.
+
+You can find more information in [TESTING.md](TESTING.md)
+
+### Others
+
+- [Cloudinary](https://cloudinary.com/) Used for managing and hosting images and other media files in the cloud.
+- [flaticon](https://www.flaticon.com/) Used for sourcing the favicon for the website.
+- [Favicon-generator](https://www.favicon-generator.org/to) Used to create various sizes of the favicon for compatibility across different devices and platforms.
+- [Font Awesome](https://fontawesome.com/) Provided the icons used throughout the website.
+- [Google Fonts](https://fonts.google.com/) Offered a variety of web fonts for styling text across the website.
+- [logo](https://logo.com/) Used to create the site's logo.
+- [lunapic](https://www3.lunapic.com/editor/) Online photo editor.
+- [Summernote](https://summernote.org/) A WYSIWYG editor that provides a user-friendly interface for creating and editing rich text content on the web.
+
+# Testing
+
+For all testing and validation, please refer to the [**TESTING.md**](TESTING.md) file.
 
 
 ## Deployment
 
-The live link can be found here - [Word Wander](https://word-wander-c212ee79ed5a.herokuapp.com/)
+The live link can be found here - [**Dishcover**](https://dishcover-c2716dc71705.herokuapp.com/)
 
 This project was deployed using the Code Institute's mock terminal for Heroku.
 
-__Steps for deployment__:
+__Steps for deployment with Heroku__:
 
-1. Create an account or log in to Heroku.
-2. On the dashboard, in the right corner click the button that says "New" and choose "Create New App".
-3. Pick a name of the app. The name has to be unique because it can't match any other name being used.
-4. Select your region, United States or Europe.
-5. Add payment method if needed.
-6. Click "Create App".
-7. On the menu at the top of the page, go to the Settings Tab.
-8. Scroll down to Config Vars and click "Reveal Config Vars".
-9. Add a new Config Var and enter PORT in the keybox and 8000 in the valuebox.
-10. Under Config Vars you will find Buildpacks.
-11. Click "Add Buildpacks".
-12. Select python.
-13. Repeat this step but select nodejs.
-14. Important to know: The python has to be picked before the nodejs, if it is not in order 6you can change the order by click and drag to correct the order.
-15. Scroll back to the top of the page, to the menu and go to the Deploy Tab.
-16. Select GitHub as the deployment method and confirm.
-17. Search for you repository name and connect that.
-18. Scroll down to the bottom of the page and there you can choose if you want the deploys to be Automatic or Manually. The Manually deployed branches needs redepolying each time the repository is updated.
-19. Click "View" to see the live site.
+1. Log into Heroku and navigate to the dashboard.
+2. Navigate to the button "New" in the top right corner and select "Create New App" from the navigation dropdown menu.
+3. Enter a name for the app. The name of the app must be unique and cannot be identical to any other app deployed by other users on Heroku.
+3. Select your region, "United States" or "Europe", from the navigation dropdown menu.
+4. Click on the button "Create App".
+5. Navigate to "Deploy" on the top navigation menu, scroll down to "Deploy Method" and connect the repository with GitHub.
+6. Navigate to "Settings" on the top navigation menu.
+7. In the section "Config Var", click on the button "Reveal Config Vars".
+8. Click on "Add a new Config Var" and add the necessary keys and values.
+    - 'SECRET_KEY' with the value of the secret keyfor the Django project
+    - 'DATABASE_URL' with the value of the database url
+    - 'CLOUDINARY_URL' with the value of the cloudinary url
+9. Navigate to section "Deploy" on the top navigation menu.
+10. Select "GitHub" as the deployment method.
+11. Search for the repository to be deployed by using the search bar and click "Connect".
+12. Select the repository branch to be deployed.
+13. Choose "Manual" deployment.
+    - Manual deployment must be manually re-deployed after pushing new changes to the repository.
+    - Crucial when working with DEBUG=True during development.
+14. Click the button "View" to open the link to the deployed project.
+
+**For deployment, Heroku needs two additional files in order to deploy properly.**
+- **requirements.txt**:
+    - You can update the requirements file after installing more packages with the command:
+    ```bash
+    pip3 freeze --local > requirements.txt
+    ```
+    - You can install this project'S requirements using:
+    ```bash
+    pip3 install -r requirements.txt
+    ```
+
+- **Procfile**, which can be created with the following steps:
+    1. echo web: gunicorn app_name.wsgi > Procfile
+    2. replace app_name with the name of your primary Django app name; the folder where settings.py is located
+
+
+# Credits
+
+## Code:
+
+- Code Institute's **Codestar Walkthrough Project**: Used for inspiration and project setup guidance.
+- [**Bootstrap:**](https://getbootstrap.com/) Utilized for responsive design and UI components.
+- [**Stackoverflow:**](https://stackoverflow.com/) Utilized for finding solutions and troubleshooting errors encountered during development.
+- [**w3schools**](https://www.w3schools.com/) and [**mozilla:**](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) Provided styling solutions and clear tutorials for web development.
+
+
+## Content
+
+- A big thank you to Dee-McG for her incredibly valuable [video tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy) on creating a recipe blog blog with Django. Her tutorial was a great inspiration.
+- Recipes were sourced from [allrecipes](https://www.allrecipes.com/)
+- [color-hex:](https://www.color-hex.com/) for color samples.
+
+## Media
+
+Media elemets for the site were gathered, managed, or edited through these platforms:
+
+- [flaticon:](https://www.flaticon.com/) Used for sourcing the favicon for the website.
+- [Favicon-generator:](https://www.favicon-generator.org/to) Used to create various sizes of the favicon for compatibility across different devices and platforms.
+- [Font Awesome:](https://fontawesome.com/) Provided the icons used throughout the website.
+- [logo:](https://logo.com/) Used to create the site's logo.
+- [lunapic:](https://www3.lunapic.com/editor/) Online photo editor.
+- [Pexels:](https://www.pexels.com/) Sourced home page link box images and about us profile image.
+- [Canva:](https://www.canva.com/) For Editing and saving images.
+- [Balsamiq:](https://balsamiq.com/wireframes/) To design site's wireframe.
+- [dbdiagram:](https://dbdiagram.io/d) to design site's database schema (ERD).
+- [am i responsive:](https://ui.dev/amiresponsive) was used to get a responsive image for README.
+
+
+# Readme and Testing inspiration
+
+While writing the README and conducting tests, I was significantly inspired by the work of my fellow Code Institute colleagues.
+
+- [Amir Shkolnik](https://github.com/AmirShkolnik/Cups-of-Joy/)
+- [Gudrun Omarsdottir](https://github.com/g-omarsdottir/helping-hands-happy-hearts)
+
+
+# Acknowledgements
+My Code Institute class facilitator, Kristyna Wach, for her cheerful motivation and encouragement.
+Slack community for support and advice.
+Stackoverflow community for information.
