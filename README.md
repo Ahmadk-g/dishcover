@@ -455,7 +455,7 @@ After **Deleting a recipe**:
 **500 Internal Server Error:** Shown when the server encounters an unexpected condition. This page notifies users of a server issue and provides a user-friendly message.
 
 # Future Features
-Features that can be implemented in these pages for a better experience.
+Features that can be implemented to these pages for a better experience.
 
 ### 'Add Recipe' Form
 

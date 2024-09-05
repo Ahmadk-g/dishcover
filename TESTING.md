@@ -112,7 +112,7 @@ Python File | Results | Comment |
 |admin.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-admin.py.png) </details> | No Errors
 |forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-forms.py.png) </details> | No Errors
 |models.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-models.py.png) </details> | No Errors
-|test_forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipes-test-forms.png) </details> | No Errors
+|test_forms.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-test-forms.png) </details> | No Errors
 |test_views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipes-test-views.png) </details> | No Errors
 |urls.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-urls.py.png) </details> | No Errors
 |views.py| <details> <summary><strong>Click to View Results</strong></summary>![PEP8 Results](documentation/testing/pep8/recipe-views.py.png) </details> | Long lines can't be divided
