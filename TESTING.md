@@ -180,7 +180,7 @@ HTML File | Results | Validation results pdf | Comments
 <details> 
 <summary><strong>Click to View Results</strong></summary>
 
-![CSS Results](documentation/testing/js-script.png)
+![JS Results](documentation/testing/js-script.png)
 </details>
 
 

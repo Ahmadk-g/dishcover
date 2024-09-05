@@ -250,16 +250,16 @@ The dynamic navbar adjusts based on user status. When logged in, it replaces the
 <details>
 <summary><strong>Click to View Navbar</strong></summary>
 
-![Navbar](documentation/features/navbar.png)
+![Features](documentation/features/navbar.png)
 
 **Not Logged In:**  
-![Navbar](documentation/features/nouser.png)
+![Features](documentation/features/nouser.png)
 
 **User Authenticated:**     
-![Navbar](documentation/features/user.png)
+![Features](documentation/features/user.png)
 
 **Super User:**   
-![Navbar](documentation/features/superuser.png)
+![Features](documentation/features/superuser.png)
 
 </details>
 <br>
@@ -270,7 +270,7 @@ On smaller screens, the navbar compresses into a dropdown for easier navigation.
 <details>
 <summary><strong>Click to View Hamburger Menu</strong></summary>
 
-![Navbar](documentation/features/hamburgermenu.png)
+![Features](documentation/features/hamburgermenu.png)
 
 </details>
 
@@ -281,7 +281,7 @@ Dishcover's homepage welcomes the user with an intuituve layout, featuring a mot
 <details>
 <summary><strong>Click to View Home Page</strong></summary>
 
-![Home Page](documentation/features/home.png)
+![Features](documentation/features/home.png)
 </details>
 
 ### Recipes Page
@@ -291,7 +291,7 @@ The Recipes page displays a paginated list of all recipes, allowing users to eas
 <details>
 <summary><strong>Click to View Recipes</strong></summary>
 
-![Home Page](documentation/features/recipes.png)
+![Features](documentation/features/recipes.png)
 </details>
 
 ### Recipe Details View
@@ -302,7 +302,7 @@ The Recipe Details view offers an in-depth view of each dish, showcasing a featu
 <details>
 <summary><strong>Click to View Recipes Details</strong></summary>
 
-![Home Page](documentation/features/recipedetails.png)
+![Features](documentation/features/recipedetails.png)
 </details>
 
 ### Add Recipe Page
@@ -312,7 +312,7 @@ The Add Recipe page allows users to easily create and share their own recipes by
 <details>
 <summary><strong>Click to View the Add Recipes Page</strong></summary>
 
-![Home Page](documentation/features/addrecipe.png)
+![Features](documentation/features/addrecipe.png)
 </details>
 
 ### Delete Recipe Confirmation Page
@@ -322,7 +322,7 @@ The Delete Recipe Confirmation page prompts users to confirm the removal of a re
 <details>
 <summary><strong>Click to View Delete Confirmation Page</strong></summary>
 
-![Home Page](documentation/features/deleterecipe.png)
+![Features](documentation/features/deleterecipe.png)
 </details>
 
 ### About
@@ -332,7 +332,7 @@ The About page provides an overview of Dishcover, detailing the website's missio
 <details>
 <summary><strong>Click to View the About Page</strong></summary>
 
-![Home Page](documentation/features/about.png)
+![Features](documentation/features/about.png)
 </details>
 
 ### User Tailored Features
@@ -344,7 +344,7 @@ The My Recipes page displays all the recipes a user has created, allowing easy a
 <details>
 <summary><strong>Click to View 'My Recipes' Page</strong></summary>
 
-![Home Page](documentation/features/myrecipes.png)
+![Features](documentation/features/myrecipes.png)
 </details>
 
 #### **Favorites Page**
@@ -354,7 +354,7 @@ The My Favorites page showcases a personalized collection of recipes that a user
 <details>
 <summary><strong>Click to View 'Favorites' Page</strong></summary>
 
-![Home Page](documentation/features/favorites.png)
+![Features](documentation/features/favorites.png)
 </details>
 <br>
 
@@ -363,7 +363,7 @@ If the user hasn't liked any recipes, they get a different view. Same case for '
 <details>
 <summary><strong>Click to View 'Empty page' </strong></summary>
 
-![Home Page](documentation/features/nofavorites.png)
+![Features](documentation/features/nofavorites.png)
 </details>
 
 ### Authentication Pages
@@ -439,7 +439,7 @@ After **Deleting a recipe**:
 <details>
 <summary><strong>Click to View 403 Page</strong></summary>
 
-![Home Page](documentation/features/403.png)
+![Features](documentation/features/403.png)
 </details>
 <br>
 
@@ -448,7 +448,7 @@ After **Deleting a recipe**:
 <details>
 <summary><strong>Click to View 404 Page</strong></summary>
 
-![Home Page](documentation/features/404.png)
+![Features](documentation/features/404.png)
 </details>
 <br>
 
