@@ -185,7 +185,7 @@ HTML File | Results | Validation results pdf | Comments
 
 
 
-### Lighthouse Testing
+## Lighthouse Testing
 
 All Lighthouse testing was performed on the deployed website using Chrome Developer Tools Lighthouse Report.
 
@@ -203,7 +203,7 @@ Page | Results |
 | Signup | <img src="documentation/testing/lighthouse/desktop-signup.png" alt="Lighthouse Desktop" width="300"/>
 
 
-### Resolved Issues:
+## Resolved Issues:
 
 - While aiming for better semantic structure by using <**section**> instead of <**div**>, I encountered more errors in certain files when validating with the W3C Markup Validator. I resolved these issues by reverting to <**div**>.
 

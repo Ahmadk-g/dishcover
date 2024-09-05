@@ -1,4 +1,4 @@
-# DishCover
+<h1 align="center"> DishCover</h1>
 
 <h2>Welcome</h2>
 
@@ -9,20 +9,12 @@ Link to live website: [CLICK HERE!](https://dishcover-c2716dc71705.herokuapp.com
 
 # Introduction
 
-## Dishcover
-
 Welcome to [**Dishcover**](https://dishcover-c2716dc71705.herokuapp.com/), your ultimate destination for culinary exploration and creativity. Our platform is designed to bring together food lovers from all walks of life to discover, create, and share extraordinary recipes. Whether you're an aspiring chef or a passionate home cook, Dishcover is here to inspire your culinary journey.
 
 At [**Dishcover**](https://dishcover-c2716dc71705.herokuapp.com/), we believe that every dish has a story waiting to be told. Our goal is to create a welcoming community where you can uncover new flavors, perfect your cooking skills, and connect with fellow food enthusiasts. From mouthwatering recipes to expert tips and tricks, we provide everything you need to elevate your cooking experience.
 
 Join us as we embark on a delicious adventure, explore diverse cuisines, and celebrate the art of cooking together. Discover new favorites, share your own creations, and make every meal a memorable one with Dishcover.
 
-
-# Table of Contents
-final addition !.
-.
-.
-.
 
 # UX - User Experience
 
@@ -37,6 +29,29 @@ Dishcover is designed with a focus on delivering an engaging and immersive exper
 - **Interactive Community:** Dishcover cultivates a lively community where users can share their culinary passion, exchange ideas, and engage through likes and personal reviews of recipes and food experiences to connect with like-minded individuals.
 
 Dishcover’s UX design strives to create a dynamic and inclusive space where food enthusiasts can explore, learn, and connect, while immersing themselves in the diverse and delightful experiences of the culinary world.
+
+
+# Design
+
+## Colour Scheme
+
+Dishcover’s color scheme is thoughtfully designed to evoke warmth, sophistication, and a sense of culinary adventure. Each color has been selected to contribute to an inviting and engaging user experience.
+
+The main colors used across the site are listed below. In some cases, different shades of these colors were applied to improve the user experience.
+
+![Palette](documentation/color/colorpalette.png)
+
+- **#494a37** (earthy green-brown): Used as a font color, it provides a strong contrast against lighter backgrounds, ensuring readability while imparting a grounded, natural feel. 
+- **#717357** (muted olive green): It creates a visually appealing contrast that guides users effortlessly through the site.
+- **#9ea07e** (ighter olive green): Used in forms and various elements, the color's subtlety makes it ideal for background elements, contributing to a clean, user-friendly interface that is both pleasing and unobtrusive.
+- **#ffc674** (golden yellow shade): The color’s brightness draws attention and encourages interaction, while still maintaining a sophisticated edge.
+- **#ffb94f** (deeper shade of golden yellow): The color’s warmth and intensity create a more immersive and engaging user interaction.
+
+## Fonts
+
+- The primary font used throughout the site is **Geologica**.
+- **Sans Serif** is designated as a backup font in case the chosen font fails to load correctly.
+
 
 # Project Scope
 
@@ -69,28 +84,6 @@ Dishcover aims to be the ultimate online blog for food enthusiasts, offering a d
 - Interactive features and forms.
 - Advanced search and filter capabilities to quickly find specific recipes.
 
-# Design
-
-## Colour Scheme
-
-Dishcover’s color scheme is thoughtfully designed to evoke warmth, sophistication, and a sense of culinary adventure. Each color has been selected to contribute to an inviting and engaging user experience.
-
-![Palette](documentation/color/colorpalette.png)
-
-- **#494a37 -  earthy green-brown:** Used as a font color, it provides a strong contrast against lighter backgrounds, ensuring readability while imparting a grounded, natural feel. 
-- **#717357 - muted olive green:** It creates a visually appealing contrast that guides users effortlessly through the site.
-- **#9ea07e - lighter olive green:** Used in forms and various elements, the color's subtlety makes it ideal for background elements, contributing to a clean, user-friendly interface that is both pleasing and unobtrusive.
-- **#ffc674 golden yellow shade:** The color’s brightness draws attention and encourages interaction, while still maintaining a sophisticated edge.
-- **#ffb94f deeper shade of golden yellow:** The color’s warmth and intensity create a more immersive and engaging user interaction.
-- #faf4c1 (continue)...
-- #ffffff (continue)...
-
-## Fonts
-.
-.
-.
-.
-
 
 # Project Planning
 
@@ -117,95 +110,95 @@ The Kanban board for this project can be viewed [here](https://github.com/users/
 
 ## Site Layout Design
 
-***Home Page***
+### Home Paage
 - Welcome message
 - Recipe search functionality
 - Quick links to Recipes, Add Recipe, and Contact/About pages
 
-***Recipes Page***
+### Recipes Page
 - Category based filter
 - Link to add new recipe
 - Paginated recipe list view
 - Links to detailed view of every single recipe
 
-***Detailed Recipe Page***
+### Detailed Recipe Page
 - Picture of Recipe
 - title and main info for recipe
 - likes and CRUD functional buttons(for if the author is the current user)
 - like and unlike button
 - detailed ingredients and instructions
 
-***Add Recipe Page/Form***
+### Add Recipe Page/Form
 - Create new recipe form
 
-***About & Contact Page***
+### About & Contact Page
 - Information about the website and purpose of people behind it
 - Contact/Collabortation form
 
-***Register, login & logout pages***
+### Register, login & logout pages
 - User registration form
 - User sign-in form
 - User sign-out form
 
-***Navigation***
+### Navigation
 - Primary Navigation: Links to Recipes pages, about/contact page, Add recipe page, and Admin panel (for superusers)
 - Unregistered users: Addition Log-in and Register pages
 - Refistered users: Link to user favorites and User's recipes
 - Footer Navigation: Links to social media
 
-***Interaction Design***
+### Interaction Design
 - Responsive design for optimal viewing across devices
 - Intuative navigation 
-- Interactive elements 
+- Interactive elements
 
 ## Wireframes
 
 **Mobile and Desktop**
 
-#### Home Page Wireframes
+### Home Page Wireframes
 
 <details>
-<summary>Click to View Home Page wireframes</summary>
+<summary>Click to View 'Home' Page wireframe</summary>
 
 ![wireframes](documentation/wireframes/homepage.png)
 </details>
 
-#### Recipes Page Wireframes
+### Recipes Page Wireframes
 
 <details>
-<summary>Click to View Recipes Page wireframes</summary>
+<summary>Click to View 'Recipes' Page wireframe</summary>
 
 ![wireframes](documentation/wireframes/recipespage.png)
 </details>
 
-#### Recipe Details Page Wireframes
+### Recipe Details Page Wireframes
 
 <details>
-<summary>Click to View Recipes Details Page wireframes</summary>
+<summary>Click to View 'Recipes Details' Page wireframe</summary>
 
 ![wireframes](documentation/wireframes/recipedetails.png)
 </details>
 
-#### My Recipes / Favorites Page Wireframes
+### My Recipes / Favorites Page Wireframes
 
 <details>
-<summary>Click to View My Recipes/Favorites Page wireframes</summary>
+<summary>Click to View 'My Recipes/Favorites' Pages wireframe</summary>
 
 ![wireframes](documentation/wireframes/myrecipes.png)
 </details>
 
-#### Add/Edit Recipe Page Wireframes
+### Add/Edit Recipe Page Wireframes
 
 <details>
-<summary>Click to View Add Recipe Page wireframes</summary>
+<summary>Click to View 'Add Recipe' Page wireframe</summary>
 
 ![wireframes](documentation/wireframes/addrecipe.png)
 </details>
 
-#### About Page Wireframes
+### About Page Wireframes
 
 <details>
-<summary>Click to View About Page wireframes</summary>
+<summary>Click to View 'About' Page wireframe</summary>
 
 ![wireframes](documentation/wireframes/about.png)
 </details>
@@ -344,7 +337,7 @@ The About page provides an overview of Dishcover, detailing the website's missio
 
 ### User Tailored Features
 
-#### My Recipes Page
+#### **My Recipes Page**
 
 The My Recipes page displays all the recipes a user has created, allowing easy access to edit or delete them. It provides a personalized space for users to manage their culinary creations efficiently.
 
@@ -354,7 +347,7 @@ The My Recipes page displays all the recipes a user has created, allowing easy a
 ![Home Page](documentation/features/myrecipes.png)
 </details>
 
-#### Favorites Page
+#### **Favorites Page**
 
 The My Favorites page showcases a personalized collection of recipes that a user has liked, making it easy to revisit and enjoy their top culinary picks anytime.
 
@@ -462,19 +455,20 @@ After **Deleting a recipe**:
 **500 Internal Server Error:** Shown when the server encounters an unexpected condition. This page notifies users of a server issue and provides a user-friendly message.
 
 # Future Features
+Features that can be implemented in these pages for a better experience.
 
-### Add Recipe Form
+### 'Add Recipe' Form
 
 - Automatically number instructions as Step 1, Step 2, etc.
 - Prefill bullet points for ingredients.
 - Standardize Summernote Rich Text fields with a single font family and size.
 
-### Recipes List Page
+### 'Recipes List' Page
 
 - Implement a search bar as the one in the home page for easier navigation.
 - Include a 'Remove Filter' button for resetting filters.
 
-### Detailed Recipe view
+### 'Detailed Recipe' view
 
 - Introduce a comment form to encourage user interaction.
 - Add a back button for easier navigation.
@@ -484,7 +478,6 @@ After **Deleting a recipe**:
 - Allow users to create profiles with the option to upload a profile image, along with additional features such as:
     - Following other users.
     - Recieving notifications.
-
 
 
 # Technology Used
@@ -544,7 +537,7 @@ You can find more information in [TESTING.md](TESTING.md)
 For all testing and validation, please refer to the [**TESTING.md**](TESTING.md) file.
 
 
-## Deployment
+# Deployment
 
 The live link can be found here - [**Dishcover**](https://dishcover-c2716dc71705.herokuapp.com/)
 
@@ -630,6 +623,7 @@ While writing the README and conducting tests, I was significantly inspired by t
 
 
 # Acknowledgements
-My Code Institute class facilitator, Kristyna Wach, for her cheerful motivation and encouragement.
-Slack community for support and advice.
-Stackoverflow community for information.
+- My Code Institute class facilitator, Kristyna Wach, for her motivation and encouragement.
+- Fellow Code Insitute colleagues for sharing their experiences and valuable advice.
+- Slack community for support and advice.
+- Stackoverflow community for information.
