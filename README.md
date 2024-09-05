@@ -5,7 +5,7 @@
 Link to live website: [CLICK HERE!](https://dishcover-c2716dc71705.herokuapp.com/)
 
 
-![Responsive Image](documentation/Responsive-image.png)
+![Responsive Image](documentation/responsive-image.png)
 
 # Introduction
 
