@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'recipes',
     'home',
     'about',
+    'csp',
 ]
 
 SITE_ID = 1
@@ -98,9 +99,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+CSP_FRAME_ANCESTORS = ["'self'", "https://ui.dev/amiresponsive"]
 
 ROOT_URLCONF = 'foodblog.urls'
 
