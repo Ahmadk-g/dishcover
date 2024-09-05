@@ -51,7 +51,7 @@ Page/View | What was tested | Expected outcome | Result |
 | Feedback Messages | Delete Recipe | "Recipe deleted successfully." | Passed |
 | Feedback Messages | logout | "You have signed out." | Passed |
 | Feedback Messages | login | "Successfully signed in as {User}" | Passed |
-| Feedback Messages | Fade out | message fade out in seconds | Passed |
+| Feedback Messages | Fade out | Using Js, message fade out in seconds | Passed |
 | Admin Dashboard | Admin Panel Access | Appears in Navbar for superusers | Passed |
 | Error - 404 | Appending a page url that does not exist  | Redirect to 404 - Page not found | Passed |
 | Error - 404 | Appending a page url unauthorized  | Redirect to 403 page - Unauthorized access | Passed |
